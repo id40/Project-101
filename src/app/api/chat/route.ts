@@ -78,7 +78,7 @@ export async function POST(req: Request) {
       try {
         const ai = new GoogleGenAI({ apiKey: apiKey.trim() });
         const response = await ai.models.generateContent({
-          model: 'gemini-2.5-flash',
+          model: 'gemini-3.6-flash',
           contents: message,
           config: {
             systemInstruction: GEMINI_SYSTEM_INSTRUCTION,
@@ -100,13 +100,13 @@ export async function POST(req: Request) {
                 'UniMall food options',
                 'Library hours',
               ],
-              poweredBy: 'gemini-2.5-flash',
+              poweredBy: 'gemini-3.6-flash',
             });
           } catch {
             // If JSON parsing fails, return text as reply
             return NextResponse.json({
               reply: text,
-              poweredBy: 'gemini-2.5-flash',
+              poweredBy: 'gemini-3.6-flash',
             });
           }
         }
