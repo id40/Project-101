@@ -318,7 +318,7 @@ export default function CampusNavigatorPage() {
         {[
           { label: 'Gate 1', id: 'gate-01' },
           { label: 'Block 34 (CSE)', id: 'b-33-34' },
-          { label: 'UniMall & Salon', id: 'b-15-unimall' },
+          { label: 'UniMall & Food Court', id: 'b-15-unimall' },
           { label: 'Unipolis', id: 'unipolis' },
           { label: 'Central Library', id: 'b-36-38' },
           { label: 'Cricket Stadium', id: 'cricket-stadium' },

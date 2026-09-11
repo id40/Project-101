@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { Vendor } from '@/types/campus';
 import { LPU_VENDORS } from '@/data/lpuVendors';
-import { X, Store, Star, Navigation, Phone, Tag, Scissors, Utensils, Pill, Printer, DollarSign } from 'lucide-react';
+import { X, Store, Star, Navigation, Phone, Tag, ShoppingBag, Utensils, Pill, Printer, DollarSign } from 'lucide-react';
 
 interface VendorSheetProps {
   onSelectVendor: (ven: Vendor) => void;
@@ -22,11 +22,10 @@ export const VendorSheet: React.FC<VendorSheetProps> = ({
 
   const categories = [
     { id: 'all', label: 'All Shops', icon: Store },
-    { id: 'salon', label: 'Salon & Grooming', icon: Scissors },
-    { id: 'food', label: 'Food & Cafés', icon: Utensils },
-    { id: 'pharmacy', label: 'Pharmacy', icon: Pill },
-    { id: 'stationery', label: 'Printing & Xerox', icon: Printer },
-    { id: 'atm', label: 'ATMs', icon: DollarSign },
+    { id: 'food', label: 'Food & Dining', icon: Utensils },
+    { id: 'stationery', label: 'Books & Printing', icon: Printer },
+    { id: 'pharmacy', label: 'Pharmacy & Health', icon: Pill },
+    { id: 'atm', label: 'Banks & ATMs', icon: DollarSign },
   ];
 
   const filtered = LPU_VENDORS.filter((v) => filter === 'all' || v.category === filter);

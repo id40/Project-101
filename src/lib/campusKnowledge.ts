@@ -14,21 +14,30 @@ export interface CampusKnowledgeEntry {
 
 export const LPU_KNOWLEDGE_BASE: CampusKnowledgeEntry[] = [
   // ==========================================
-  // SALON & GROOMING
+  // LOVELY SWEETS & BAKE STUDIO
   // ==========================================
   {
-    id: 'salon-saarsh',
-    category: 'service',
-    keywords: ['salon', 'haircut', 'grooming', 'saarsh', 'barber', 'hair', 'shave', 'spa', 'facial', 'beauty parlour', 'hairdresser'],
-    title: 'Saarsh Unisex Salon & Grooming Lounge',
-    reply: `✂️ **Saarsh Unisex Salon & Grooming Lounge** is located on the **2nd Floor of UniMall** [Block 15].
-• **Timings:** 10:00 AM – 09:00 PM (Daily)
-• **Services:** Hair styling, grooming, beard trimming, styling, facials, and hair care.
-• **Student Benefit:** 15% – 20% flat discount on presenting your digital or physical LPU Student ID!
-• **Indoor Navigation:** Available via UniMall indoor blueprint (Elevator / Central Escalator to 2nd Floor).`,
+    id: 'food-lovely-sweets',
+    category: 'food',
+    keywords: ['sweets', 'bakery', 'lovely sweets', 'lovely bake studio', 'pastry', 'cake', 'birthday cake', 'mithai', 'dessert'],
+    title: 'Lovely Sweets & Lovely Bake Studio (UniMall)',
+    reply: `🎂 **Lovely Sweets & Lovely Bake Studio** is located on the **Ground Floor of UniMall** [Block 15].
+• **Timings:** 09:00 AM – 09:30 PM (Daily)
+• **Specialties:** Authentic traditional sweets, customized celebratory birthday cakes for hostellers, fresh pastries, patties, and artisanal breads.
+• **Service:** On-campus birthday cake delivery to hostel reception desks!`,
     actionLocationId: 'b-15-unimall',
-    actionType: 'indoor',
-    quickReplies: ['Take me to UniMall', 'Show indoor floor plan', 'What other shops are in UniMall?'],
+    actionType: 'navigate',
+    quickReplies: ['Navigate to UniMall', 'UniMall food options', 'Show Central Library'],
+  },
+  {
+    id: 'salon-query',
+    category: 'service',
+    keywords: ['salon', 'haircut', 'barber', 'saarsh'],
+    title: 'Grooming & Salon Information',
+    reply: `✂️ **Grooming Information:** Note that there is no "Saarsh Salon" inside the LPU campus. For personal grooming, haircuts, and salons, students typically use established barbers and salons at Law Gate / GT Road commercial markets right outside Gate 1. Inside UniMall, verified student stores include **Lovely Bake Studio & Sweets**, **WH Smith Bookstore**, **Titan Eye+**, **Campus Pharmacy**, **Banking/ATMs**, and the **Central Food Court**.`,
+    actionLocationId: 'b-15-unimall',
+    actionType: 'navigate',
+    quickReplies: ['UniMall shops', 'Where is Gate 1 (GT Road)?', 'Uni-Hospital Pharmacy'],
   },
 
   // ==========================================
@@ -296,7 +305,7 @@ export const LPU_KNOWLEDGE_BASE: CampusKnowledgeEntry[] = [
   - Girls Hostel Complex Gate.`,
     actionLocationId: 'b-15-unimall',
     actionType: 'navigate',
-    quickReplies: ['Navigate to UniMall ATMs', 'Show Gate 1 ATMs', 'Where is Saarsh Salon?'],
+    quickReplies: ['Navigate to UniMall ATMs', 'Show Gate 1 ATMs', 'Where is Lovely Sweets?'],
   },
 
   // ==========================================
@@ -400,8 +409,8 @@ export function queryCampusKnowledge(userQuery: string): {
   const q = userQuery.toLowerCase().trim();
   if (!q) {
     return {
-      reply: "Hello! I am your verified LPU Campus AI Buddy. Ask me about any academic block, classroom, food court, hostel curfew, salon services, or emergency help!",
-      quickReplies: ['Where is Saarsh Salon?', 'Where is Block 34 CSE?', 'Library timings?', 'Hostel curfew?']
+      reply: "Hello! I am your verified LPU Campus AI Buddy. Ask me about any academic block, classroom, food court, hostel curfew, or emergency help!",
+      quickReplies: ['Where is Lovely Sweets?', 'Where is Block 34 CSE?', 'Library timings?', 'Hostel curfew?']
     };
   }
 
@@ -461,7 +470,7 @@ export function queryCampusKnowledge(userQuery: string): {
     reply: `I couldn't find an exact record for that specific query in our verified campus directory.
 • **General Campus Assistance:** Please visit the **Central Admissions Helpdesk in Block 29** or **Division of Student Welfare (DSW) in Block 13**.
 • **24/7 Campus Emergency / Security Helpline:** **01824-517000**.
-• You can also ask me about **Blocks 1 to 58**, **UniMall**, **Saarsh Salon**, **Hostels BH/GH**, or **Sports & Library hours**.`,
+• You can also ask me about **Blocks 1 to 58**, **UniMall**, **Lovely Sweets & Bake Studio**, **Hostels BH/GH**, or **Sports & Library hours**.`,
     quickReplies: ['Where is Block 34?', 'UniMall food options', 'Library hours?', 'Hostel rules'],
   };
 }

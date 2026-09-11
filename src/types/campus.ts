@@ -48,7 +48,7 @@ export interface Vendor {
   id: string;
   location_id: string;
   name: string;
-  category: 'salon' | 'food' | 'pharmacy' | 'stationery' | 'atm' | 'services';
+  category: 'food' | 'pharmacy' | 'stationery' | 'atm' | 'services';
   description: string;
   phone?: string;
   image_url?: string;

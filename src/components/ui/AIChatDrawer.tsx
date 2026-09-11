@@ -37,7 +37,7 @@ export const AIChatDrawer: React.FC<AIChatDrawerProps> = ({
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [activeQuickReplies, setActiveQuickReplies] = useState<string[]>([
-    'Where is Saarsh Unisex Salon?',
+    'Where is Lovely Sweets (UniMall)?',
     'What are the Central Library hours?',
     'Where is Academic Block 34 (CSE)?',
     'What are the hostel curfew timings?',

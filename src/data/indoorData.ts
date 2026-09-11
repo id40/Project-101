@@ -188,9 +188,9 @@ export const INDOOR_FLOOR_PLANS: Record<string, BuildingFloorPlan> = {
       },
       {
         floor_number: 2,
-        floor_name: '2nd Floor (Saarsh Salon & Banking)',
+        floor_name: '2nd Floor (Post Office & Banking)',
         rooms: [
-          { id: 'um-2-saarsh', room_number: '2-01', name: 'Saarsh Unisex Salon & Grooming Lounge', category: 'cafeteria', floor: 2, x: 20, y: 60, width: 30, height: 30, color: '#EC4899' },
+          { id: 'um-2-post', room_number: '2-01', name: 'Campus Post Office & Parcel Hub', category: 'office', floor: 2, x: 20, y: 60, width: 30, height: 30, color: '#F59E0B' },
           { id: 'um-2-sbi', room_number: '2-02', name: 'State Bank of India (SBI Branch)', category: 'office', floor: 2, x: 75, y: 65, width: 25, height: 25, color: '#3B82F6' },
           { id: 'um-2-hdfc', room_number: '2-03', name: 'HDFC Bank & 24/7 ATM Bay', category: 'office', floor: 2, x: 75, y: 35, width: 25, height: 20, color: '#1E40AF' },
           { id: 'um-2-optics', room_number: '2-04', name: 'Titan Eye+ & Optical Care', category: 'classroom', floor: 2, x: 20, y: 30, width: 25, height: 18, color: '#10B981' },
@@ -199,14 +199,14 @@ export const INDOOR_FLOOR_PLANS: Record<string, BuildingFloorPlan> = {
         ],
         nodes: [
           { id: 'n-um-2-stairs', floor: 2, x: 50, y: 50, type: 'stairs', room_id: 'um-2-stairs' },
-          { id: 'n-um-2-saarsh', floor: 2, x: 36, y: 60, type: 'room_door', room_id: 'um-2-saarsh' },
+          { id: 'n-um-2-post', floor: 2, x: 36, y: 60, type: 'room_door', room_id: 'um-2-post' },
           { id: 'n-um-2-sbi', floor: 2, x: 66, y: 65, type: 'room_door', room_id: 'um-2-sbi' },
           { id: 'n-um-2-hdfc', floor: 2, x: 66, y: 35, type: 'room_door', room_id: 'um-2-hdfc' },
           { id: 'n-um-2-optics', floor: 2, x: 34, y: 30, type: 'room_door', room_id: 'um-2-optics' },
           { id: 'n-um-2-lift', floor: 2, x: 45, y: 25, type: 'lift', room_id: 'um-2-lift' },
         ],
         edges: [
-          { from: 'n-um-2-stairs', to: 'n-um-2-saarsh', distance: 10 },
+          { from: 'n-um-2-stairs', to: 'n-um-2-post', distance: 10 },
           { from: 'n-um-2-stairs', to: 'n-um-2-sbi', distance: 10 },
           { from: 'n-um-2-stairs', to: 'n-um-2-hdfc', distance: 11 },
           { from: 'n-um-2-stairs', to: 'n-um-2-optics', distance: 12 },

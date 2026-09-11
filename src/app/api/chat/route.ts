@@ -24,13 +24,14 @@ CAMPUS DIRECTORY & GROUND TRUTH:
    - Block 47 (B-47): Indoor Sports Arena (squash, badminton, gym, table tennis).
    - Blocks 55 to 58 (B-55-56): Heavy Engineering (Mechanical workshops, civil testing labs, BAJA SAE / Formula Student sheds).
 
-2. Commercial, Dining & Grooming:
+2. Commercial, Dining & Student Services:
    - UniMall (b-15-unimall):
-     * Ground Floor: Food Court (Domino's, Subway, Café Coffee Day, Dosa Plaza, Baskin Robbins, Chatkazz).
-     * 1st Floor: WH Smith Bookstore, high-speed Printing & Xerox, LPU Merchandise.
-     * 2nd Floor: Saarsh Unisex Salon & Grooming Lounge (10:00 AM - 09:00 PM, 15-20% student discount with LPU ID), SBI Bank, HDFC Bank, ATM Gallery.
+     * Ground Floor: Food Court (Domino's, Subway, Café Coffee Day, Dosa Plaza, Keventers, Sachdeva Juice, Lovely Sweets, Lovely Bake Studio).
+     * 1st Floor: WH Smith Bookstore, high-speed Printing & Xerox, LPU Merchandise & Apparel.
+     * 2nd Floor: Campus Post Office & Parcel Hub, State Bank of India (SBI Branch), HDFC Bank, 24/7 ATM Gallery, Titan Eye+.
    - LIT Market (b-18-20): Student foodie hub beside Law block (Bokki Tokki Korean street food, Rolls Empire, fresh juices).
    - BH Food Square (bh-1-2): Late-night food street & night canteens open until 01:00 AM.
+   - Note on Salons: There is NO 'Saarsh Salon' inside LPU. For haircuts and grooming, students visit local commercial shops at Law Gate outside Gate 1.
 
 3. Residential Hostels:
    - Boys Hostels (BH-1 to BH-8): West sector. BH-1/2 has dining mess, skating rink, and food square.
@@ -55,7 +56,7 @@ INSTRUCTIONS:
     "quickReplies": ["string (2 to 4 contextual follow-up prompt suggestions)"]
   }
 - If the question relates to Block 34, UniMall, or Central Library, set actionType to 'indoor' or 'navigate' and provide the corresponding actionLocationId so the user can open the floor plan or walk route!
-- For questions about Saarsh Salon, reference its 2nd floor location in UniMall, 15-20% student discount, and set actionLocationId to 'b-15-unimall' with actionType 'indoor'!
+- If asked about haircuts or salons, clarify accurately that there is no salon called Saarsh inside campus; haircuts are available outside Gate 1 at Law Gate. Direct them to UniMall for on-campus retail, food, and post office.
 - NEVER fabricate information outside this verified campus data. If asked about off-campus topics, politely redirect to LPU campus services.`;
 
 export async function POST(req: Request) {
@@ -65,7 +66,7 @@ export async function POST(req: Request) {
       return NextResponse.json(
         {
           reply: "Hello! What campus directions or student queries can I help you with?",
-          quickReplies: ['Where is Saarsh Salon?', 'Where is Block 34 CSE?', 'Library hours?'],
+          quickReplies: ['Where is Lovely Sweets?', 'Where is Block 34 CSE?', 'Library hours?'],
         },
         { status: 400 }
       );
