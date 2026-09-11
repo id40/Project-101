@@ -24,7 +24,7 @@ import { StudentProfileDrawer } from '@/components/profile/StudentProfileDrawer'
 import { VendorSheet } from '@/components/ui/VendorSheet';
 import { AIChatDrawer } from '@/components/ui/AIChatDrawer';
 import { VirtualJoystick } from '@/components/ui/VirtualJoystick';
-import { Layers, Crosshair, User, X, Navigation, Award } from 'lucide-react';
+import { Layers, Crosshair, User, X, Navigation } from 'lucide-react';
 
 export default function CampusNavigatorPage() {
   // View mode: 3D or 2D
@@ -41,9 +41,9 @@ export default function CampusNavigatorPage() {
   const [isVendorSheetOpen, setIsVendorSheetOpen] = useState<boolean>(false);
   const [isChatOpen, setIsChatOpen] = useState<boolean>(false);
 
-  // Avatar & Location
-  const [avatarPosition, setAvatarPosition] = useState<[number, number, number]>([0, 0, 0]);
-  const [avatarHeading, setAvatarHeading] = useState<number>(0);
+  // Avatar & Location: Start at Main Gate 1 Welcome Plaza
+  const [avatarPosition, setAvatarPosition] = useState<[number, number, number]>([180, 0, 190]);
+  const [avatarHeading, setAvatarHeading] = useState<number>(-2.4);
   const [isMoving, setIsMoving] = useState<boolean>(false);
   const [recenterTrigger, setRecenterTrigger] = useState<number>(0);
 
@@ -79,7 +79,7 @@ export default function CampusNavigatorPage() {
         courseCode: 'CSE326',
         courseName: 'Internet Programming & Web Apps',
         roomNumber: '34-201',
-        buildingId: 'loc-002',
+        buildingId: 'b-33-34',
         startTime: '09:00',
         endTime: '10:00',
         day: 'Monday',
@@ -90,7 +90,7 @@ export default function CampusNavigatorPage() {
         courseCode: 'CSE408',
         courseName: 'Advanced Artificial Intelligence',
         roomNumber: '34-Lab 203',
-        buildingId: 'loc-002',
+        buildingId: 'b-33-34',
         startTime: '11:00',
         endTime: '13:00',
         day: 'Monday',
@@ -101,7 +101,7 @@ export default function CampusNavigatorPage() {
         courseCode: 'LIB101',
         courseName: 'Research & Library Study Session',
         roomNumber: 'LIB-Reading Hall',
-        buildingId: 'loc-001',
+        buildingId: 'b-36-38',
         startTime: '15:00',
         endTime: '16:30',
         day: 'Monday',
@@ -139,12 +139,11 @@ export default function CampusNavigatorPage() {
   // Joystick move handler
   const handleJoystickMove = useCallback((dx: number, dz: number) => {
     setAvatarPosition(([px, py, pz]) => {
-      const nx = Math.max(-180, Math.min(180, px + dx));
-      const nz = Math.max(-160, Math.min(160, pz + dz));
+      const nx = Math.max(-200, Math.min(220, px + dx));
+      const nz = Math.max(-160, Math.min(230, pz + dz));
       return [nx, py, nz];
     });
 
-    // Compute heading
     const angle = Math.atan2(dx, dz);
     setAvatarHeading(angle);
     setIsMoving(true);
@@ -160,8 +159,7 @@ export default function CampusNavigatorPage() {
       watchId = navigator.geolocation.watchPosition(
         (pos) => {
           const { x, z } = gpsToCampusCoords(pos.coords.latitude, pos.coords.longitude);
-          // If within 500m of campus center, place avatar
-          if (Math.hypot(x, z) < 300) {
+          if (Math.hypot(x, z) < 450) {
             setAvatarPosition([x, 0, z]);
             if (pos.coords.heading !== null && !isNaN(pos.coords.heading)) {
               setAvatarHeading((pos.coords.heading * Math.PI) / 180);
@@ -179,19 +177,24 @@ export default function CampusNavigatorPage() {
     };
   }, [isGpsActive]);
 
-  // Automated Simulation Tour
+  // Grand Automated Simulation Tour across the whole 600 acres
   useEffect(() => {
     let interval: NodeJS.Timeout | null = null;
     if (isSimulating) {
       const tourWaypoints: [number, number][] = [
-        [0, 0],       // Central Circle
-        [45, -20],    // Block 34
-        [120, -84],   // Library
-        [80, 40],     // Auditorium
-        [15, 72],     // Student Centre
-        [-62, 31],    // Uni-Mall & Salon
-        [-110, -55],  // Sports Complex
-        [0, 0],       // Return
+        [200, 205],   // Gate 1 Entry
+        [160, 165],   // Block 1 Fashion
+        [130, 145],   // Baldev Raj Auditorium
+        [100, 75],    // Pharmacy & Health Sciences
+        [20, 15],     // UniMall & Unipolis
+        [-10, 35],    // Mittal School of Business
+        [-80, -15],   // Block 34 Computer Science
+        [-70, -55],   // Central Library
+        [-30, -50],   // Indoor Stadium
+        [-120, -20],  // Cricket Stadium
+        [-20, -100],  // BH-1 & BH-2 Food Square
+        [100, -55],   // Uni-Hospital
+        [200, 205],   // Return to Gate 1
       ];
 
       interval = setInterval(() => {
@@ -204,10 +207,10 @@ export default function CampusNavigatorPage() {
           const angle = Math.atan2(dx, dz);
           setAvatarHeading(angle);
           setIsMoving(true);
-          setTimeout(() => setIsMoving(false), 1200);
+          setTimeout(() => setIsMoving(false), 1400);
           return [target[0], 0, target[1]];
         });
-      }, 3500);
+      }, 4000);
     }
 
     return () => {
@@ -256,7 +259,6 @@ export default function CampusNavigatorPage() {
     <div className="relative w-screen h-screen overflow-hidden bg-[#0F172A]">
       {/* Top Floating App Bar */}
       <div className="absolute top-3 left-3 right-3 z-30 flex items-center justify-between gap-2 max-w-2xl mx-auto pointer-events-auto">
-        {/* Search Bar */}
         <SearchBar
           locations={LPU_LOCATIONS}
           vendors={LPU_VENDORS}
@@ -267,9 +269,7 @@ export default function CampusNavigatorPage() {
           onSelectVendor={handleNavigateToVendor}
         />
 
-        {/* Action Controls */}
         <div className="flex items-center gap-1.5 shrink-0">
-          {/* 3D / 2D Switcher */}
           <button
             onClick={() => setViewMode((m) => (m === '3d' ? '2d' : '3d'))}
             className={`flex items-center gap-1 px-3 py-2 rounded-2xl text-xs font-bold border shadow-xl transition-all ${
@@ -282,7 +282,6 @@ export default function CampusNavigatorPage() {
             <span>{viewMode === '3d' ? '3D View' : '2D Map'}</span>
           </button>
 
-          {/* Recenter on Avatar */}
           <button
             onClick={() => setRecenterTrigger((t) => t + 1)}
             title="Recenter on My Avatar"
@@ -291,7 +290,6 @@ export default function CampusNavigatorPage() {
             <Crosshair className="w-4 h-4 text-cyan-400" />
           </button>
 
-          {/* Student Profile Button */}
           <button
             onClick={() => setIsProfileOpen(true)}
             title="Student Profile & ID"
@@ -330,7 +328,7 @@ export default function CampusNavigatorPage() {
         )}
       </div>
 
-      {/* Active Outdoor Route Banner */}
+      {/* Active Route Banner */}
       {activeRoute && (
         <div className="absolute top-16 left-3 right-3 z-30 max-w-md mx-auto pointer-events-auto">
           <div className="bg-[#1E1B4B]/95 backdrop-blur-md border border-[#635BFF]/60 rounded-2xl p-3 text-white shadow-2xl flex items-center justify-between">
@@ -358,7 +356,7 @@ export default function CampusNavigatorPage() {
         </div>
       )}
 
-      {/* Floating Virtual Joystick & GPS Controls (Bottom-Left above dock) */}
+      {/* Virtual Joystick & Controls */}
       <div className="absolute bottom-20 left-4 z-30">
         <VirtualJoystick
           onMove={handleJoystickMove}
@@ -369,7 +367,7 @@ export default function CampusNavigatorPage() {
         />
       </div>
 
-      {/* Location Detail Drawer (Bottom Sheet) */}
+      {/* Location Detail Drawer */}
       <LocationDetailDrawer
         location={selectedLocation}
         onClose={() => setSelectedLocation(null)}
@@ -377,7 +375,7 @@ export default function CampusNavigatorPage() {
         onOpenIndoorMap={(buildingId) => setIndoorBuildingId(buildingId)}
       />
 
-      {/* Indoor Turn-by-Turn Blueprint Modal */}
+      {/* Indoor Blueprint Modal */}
       {indoorBuildingId && (
         <IndoorModal
           buildingId={indoorBuildingId}
@@ -385,7 +383,7 @@ export default function CampusNavigatorPage() {
         />
       )}
 
-      {/* Digital Campus ID Card Modal */}
+      {/* Campus ID Card Modal */}
       {isIDCardOpen && (
         <CampusIDCardModal
           profile={profile}
@@ -393,7 +391,7 @@ export default function CampusNavigatorPage() {
         />
       )}
 
-      {/* Student Profile Dashboard Drawer */}
+      {/* Student Profile Dashboard */}
       {isProfileOpen && (
         <StudentProfileDrawer
           profile={profile}
@@ -424,7 +422,7 @@ export default function CampusNavigatorPage() {
         />
       )}
 
-      {/* Verified AI Campus Buddy Drawer */}
+      {/* AI Chatbot Drawer */}
       {isChatOpen && (
         <AIChatDrawer
           onClose={() => setIsChatOpen(false)}
@@ -439,7 +437,7 @@ export default function CampusNavigatorPage() {
         />
       )}
 
-      {/* Native Android Bottom Navigation Bar */}
+      {/* Android Bottom Navigation Dock */}
       <AndroidBottomNav
         currentTab={currentTab}
         onTabChange={handleTabChange}
