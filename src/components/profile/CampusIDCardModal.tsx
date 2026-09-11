@@ -154,7 +154,7 @@ export const CampusIDCardModal: React.FC<CampusIDCardModalProps> = ({ profile, o
               </div>
 
               <div className="text-[9px] text-slate-400 leading-relaxed border-t border-white/10 pt-2">
-                This digital card is property of Lovely Professional University. If found, please return to Student Services Centre (Block SSC).
+                This digital card is property of Lovely Professional University. If found, please return to Division of Student Welfare (DSW Block 13/14) or Security Desk Gate 1.
               </div>
             </div>
           </div>

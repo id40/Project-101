@@ -24,7 +24,7 @@ import { StudentProfileDrawer } from '@/components/profile/StudentProfileDrawer'
 import { VendorSheet } from '@/components/ui/VendorSheet';
 import { AIChatDrawer } from '@/components/ui/AIChatDrawer';
 import { VirtualJoystick } from '@/components/ui/VirtualJoystick';
-import { Layers, Crosshair, User, X, Navigation } from 'lucide-react';
+import { Layers, Crosshair, User, X, Navigation, Compass, MapPin } from 'lucide-react';
 
 export default function CampusNavigatorPage() {
   // View mode: 3D or 2D
@@ -131,7 +131,8 @@ export default function CampusNavigatorPage() {
       if (selectedLocation) {
         handleNavigateToLocation(selectedLocation);
       } else {
-        setSelectedLocation(LPU_LOCATIONS[0]);
+        const cse = LPU_LOCATIONS.find((l) => l.id === 'b-33-34') || LPU_LOCATIONS[0];
+        handleNavigateToLocation(cse);
       }
     }
   };
@@ -139,8 +140,8 @@ export default function CampusNavigatorPage() {
   // Joystick move handler
   const handleJoystickMove = useCallback((dx: number, dz: number) => {
     setAvatarPosition(([px, py, pz]) => {
-      const nx = Math.max(-200, Math.min(220, px + dx));
-      const nz = Math.max(-160, Math.min(230, pz + dz));
+      const nx = Math.max(-210, Math.min(230, px + dx));
+      const nz = Math.max(-170, Math.min(240, pz + dz));
       return [nx, py, nz];
     });
 
@@ -182,26 +183,26 @@ export default function CampusNavigatorPage() {
     let interval: NodeJS.Timeout | null = null;
     if (isSimulating) {
       const tourWaypoints: [number, number][] = [
-        [200, 205],   // Gate 1 Entry
-        [160, 165],   // Block 1 Fashion
-        [130, 145],   // Baldev Raj Auditorium
-        [100, 75],    // Pharmacy & Health Sciences
-        [20, 15],     // UniMall & Unipolis
-        [-10, 35],    // Mittal School of Business
-        [-80, -15],   // Block 34 Computer Science
-        [-70, -55],   // Central Library
-        [-30, -50],   // Indoor Stadium
-        [-120, -20],  // Cricket Stadium
-        [-20, -100],  // BH-1 & BH-2 Food Square
-        [100, -55],   // Uni-Hospital
-        [200, 205],   // Return to Gate 1
+        [200, 215],   // Gate 1 Entry
+        [160, 180],   // Block 1 Fashion
+        [130, 160],   // Baldev Raj Auditorium
+        [100, 90],    // Pharmacy
+        [20, 30],     // UniMall & Unipolis
+        [-10, 50],    // Mittal School of Business
+        [-80, 0],     // Block 34 Computer Science
+        [-70, -40],   // Central Library
+        [-120, -40],  // Cricket Stadium
+        [-80, -85],   // Olympic Pool
+        [-60, -120],  // BH-1 & BH-2 Food Square
+        [100, -50],   // Uni-Hospital
+        [200, 215],   // Return to Gate 1
       ];
 
       interval = setInterval(() => {
         simulationStep.current = (simulationStep.current + 1) % tourWaypoints.length;
         const target = tourWaypoints[simulationStep.current];
 
-        setAvatarPosition(([px, py, pz]) => {
+        setAvatarPosition(([px, , pz]) => {
           const dx = target[0] - px;
           const dz = target[1] - pz;
           const angle = Math.atan2(dx, dz);
@@ -255,16 +256,24 @@ export default function CampusNavigatorPage() {
     setProfile((prev) => ({ ...prev, avatar: newConfig }));
   };
 
+  // Quick Camera Presets
+  const handleFlyToDistrict = (locId: string) => {
+    const loc = LPU_LOCATIONS.find((l) => l.id === locId);
+    if (loc) {
+      setSelectedLocation(loc);
+    }
+  };
+
   return (
-    <div className="relative w-screen h-screen overflow-hidden bg-[#0F172A]">
+    <div className="relative w-screen h-screen overflow-hidden bg-[#090D16]">
       {/* Top Floating App Bar */}
       <div className="absolute top-3 left-3 right-3 z-30 flex items-center justify-between gap-2 max-w-2xl mx-auto pointer-events-auto">
         <SearchBar
           locations={LPU_LOCATIONS}
           vendors={LPU_VENDORS}
           onSelectLocation={(loc) => {
+            // Smoothly fly camera to selected location without resetting back to avatar!
             setSelectedLocation(loc);
-            setRecenterTrigger((t) => t + 1);
           }}
           onSelectVendor={handleNavigateToVendor}
         />
@@ -274,7 +283,7 @@ export default function CampusNavigatorPage() {
             onClick={() => setViewMode((m) => (m === '3d' ? '2d' : '3d'))}
             className={`flex items-center gap-1 px-3 py-2 rounded-2xl text-xs font-bold border shadow-xl transition-all ${
               viewMode === '3d'
-                ? 'bg-[#635BFF] text-white border-[#635BFF] shadow-[#635BFF]/20'
+                ? 'bg-[#635BFF] text-white border-[#635BFF] shadow-[#635BFF]/30'
                 : 'bg-slate-900/90 text-cyan-300 border-slate-700'
             }`}
           >
@@ -283,9 +292,12 @@ export default function CampusNavigatorPage() {
           </button>
 
           <button
-            onClick={() => setRecenterTrigger((t) => t + 1)}
+            onClick={() => {
+              setSelectedLocation(null);
+              setRecenterTrigger((t) => t + 1);
+            }}
             title="Recenter on My Avatar"
-            className="w-9 h-9 rounded-2xl bg-slate-900/90 border border-slate-700 text-slate-300 hover:text-white flex items-center justify-center shadow-xl transition-colors"
+            className="w-9 h-9 rounded-2xl bg-slate-900/90 backdrop-blur-md border border-slate-700 text-slate-300 hover:text-white flex items-center justify-center shadow-xl transition-all hover:scale-105 active:scale-95"
           >
             <Crosshair className="w-4 h-4 text-cyan-400" />
           </button>
@@ -293,12 +305,34 @@ export default function CampusNavigatorPage() {
           <button
             onClick={() => setIsProfileOpen(true)}
             title="Student Profile & ID"
-            className="w-9 h-9 rounded-2xl bg-slate-900/90 border border-slate-700 text-slate-300 hover:text-white flex items-center justify-center shadow-xl transition-colors relative"
+            className="w-9 h-9 rounded-2xl bg-slate-900/90 backdrop-blur-md border border-slate-700 text-slate-300 hover:text-white flex items-center justify-center shadow-xl transition-all hover:scale-105 active:scale-95 relative"
           >
             <User className="w-4 h-4 text-[#635BFF]" />
             <span className="absolute top-1 right-1 w-2 h-2 rounded-full bg-emerald-400"></span>
           </button>
         </div>
+      </div>
+
+      {/* Quick District Presets (Floating under search) */}
+      <div className="absolute top-16 left-3 right-3 z-20 max-w-xl mx-auto flex items-center gap-1.5 overflow-x-auto no-scrollbar pointer-events-auto">
+        {[
+          { label: 'Gate 1', id: 'gate-01' },
+          { label: 'Block 34 (CSE)', id: 'b-33-34' },
+          { label: 'UniMall & Salon', id: 'b-15-unimall' },
+          { label: 'Unipolis', id: 'unipolis' },
+          { label: 'Central Library', id: 'b-36-38' },
+          { label: 'Cricket Stadium', id: 'cricket-stadium' },
+          { label: 'Boys Hostels', id: 'bh-1-2' },
+          { label: 'Girls Hostels', id: 'gh-cluster' },
+        ].map((dist) => (
+          <button
+            key={dist.id}
+            onClick={() => handleFlyToDistrict(dist.id)}
+            className="px-2.5 py-1 rounded-full text-[11px] font-semibold bg-slate-950/80 backdrop-blur-md border border-slate-800 text-slate-300 hover:text-cyan-300 hover:border-[#635BFF]/50 whitespace-nowrap shadow-md transition-all"
+          >
+            {dist.label}
+          </button>
+        ))}
       </div>
 
       {/* Main Map Viewport (3D or 2D) */}
@@ -328,27 +362,33 @@ export default function CampusNavigatorPage() {
         )}
       </div>
 
-      {/* Active Route Banner */}
+      {/* Active Navigation HUD Banner */}
       {activeRoute && (
-        <div className="absolute top-16 left-3 right-3 z-30 max-w-md mx-auto pointer-events-auto">
-          <div className="bg-[#1E1B4B]/95 backdrop-blur-md border border-[#635BFF]/60 rounded-2xl p-3 text-white shadow-2xl flex items-center justify-between">
-            <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-xl bg-[#635BFF] flex items-center justify-center text-white">
-                <Navigation className="w-4 h-4 animate-bounce" />
+        <div className="absolute top-28 left-3 right-3 z-30 max-w-md mx-auto pointer-events-auto animate-in slide-in-from-top duration-300">
+          <div className="bg-[#090D16]/95 backdrop-blur-xl border border-[#635BFF]/60 rounded-3xl p-3.5 text-white shadow-2xl flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-[#635BFF] to-[#38BDF8] flex items-center justify-center text-white shadow-lg shadow-[#635BFF]/30 shrink-0">
+                <Navigation className="w-5 h-5 animate-pulse" />
               </div>
               <div>
-                <h4 className="text-xs font-bold text-white leading-tight">
-                  To: {activeRoute.destination_name}
-                </h4>
-                <p className="text-[11px] text-cyan-300">
-                  {activeRoute.total_distance}m • ~{activeRoute.estimated_time_min} min walk
+                <div className="flex items-center gap-1.5">
+                  <span className="text-[10px] bg-cyan-950/80 text-cyan-300 border border-cyan-800/60 font-bold px-1.5 py-0.2 rounded">
+                    OUTDOOR ROUTE
+                  </span>
+                  <h4 className="text-xs font-bold text-white leading-tight truncate max-w-[180px]">
+                    {activeRoute.destination_name}
+                  </h4>
+                </div>
+                <p className="text-[11px] text-slate-300 mt-0.5">
+                  <strong className="text-cyan-300">{activeRoute.total_distance}m</strong> distance • ~
+                  <strong className="text-emerald-400">{activeRoute.estimated_time_min} min</strong> walk
                 </p>
               </div>
             </div>
 
             <button
               onClick={() => setActiveRoute(null)}
-              className="p-1.5 rounded-lg bg-slate-800 text-slate-400 hover:text-white"
+              className="w-8 h-8 rounded-full bg-slate-800/80 hover:bg-slate-700 text-slate-400 hover:text-white flex items-center justify-center transition-colors"
             >
               <X className="w-4 h-4" />
             </button>
@@ -356,7 +396,7 @@ export default function CampusNavigatorPage() {
         </div>
       )}
 
-      {/* Virtual Joystick & Controls */}
+      {/* Virtual Joystick & GPS Controls */}
       <div className="absolute bottom-20 left-4 z-30">
         <VirtualJoystick
           onMove={handleJoystickMove}
@@ -428,10 +468,13 @@ export default function CampusNavigatorPage() {
           onClose={() => setIsChatOpen(false)}
           onFocusLocation={(locId) => {
             const loc = LPU_LOCATIONS.find((l) => l.id === locId);
-            if (loc) {
-              setSelectedLocation(loc);
-              handleNavigateToLocation(loc);
-            }
+            if (loc) setSelectedLocation(loc);
+          }}
+          onNavigateToLocation={(loc) => {
+            handleNavigateToLocation(loc);
+          }}
+          onOpenIndoorMap={(locId) => {
+            setIndoorBuildingId(locId);
           }}
           locations={LPU_LOCATIONS}
         />
