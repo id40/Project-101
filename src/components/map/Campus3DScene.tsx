@@ -10,7 +10,7 @@ import { CampusAvatar3D } from '@/components/avatar/CampusAvatar3D';
 interface Campus3DSceneProps {
   locations: CampusLocation[];
   selectedLocation: CampusLocation | null;
-  onSelectLocation: (loc: CampusLocation) => void;
+  onSelectLocation: (loc: CampusLocation | null) => void;
   avatarPosition: [number, number, number];
   avatarHeading: number;
   isMoving: boolean;
@@ -117,7 +117,16 @@ export const Campus3DScene: React.FC<Campus3DSceneProps> = ({
       {/* ========================================= */}
 
       {/* 1. Main Lush Campus Green Grass Base */}
-      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.06, 0]} receiveShadow>
+      <mesh
+        rotation={[-Math.PI / 2, 0, 0]}
+        position={[0, -0.06, 0]}
+        receiveShadow
+        onClick={(e) => {
+          if (e.delta < 5) {
+            onSelectLocation(null);
+          }
+        }}
+      >
         <planeGeometry args={[800, 800]} />
         <meshStandardMaterial color="#166534" roughness={0.92} metalness={0.02} />
       </mesh>
@@ -203,7 +212,7 @@ export const Campus3DScene: React.FC<Campus3DSceneProps> = ({
             position={[200, 0, 215]}
             onClick={(e) => {
               e.stopPropagation();
-              if (loc) onSelectLocation(loc);
+              if (e.delta < 5 && loc) onSelectLocation(loc);
             }}
             onPointerOver={(e) => {
               e.stopPropagation();
@@ -277,7 +286,7 @@ export const Campus3DScene: React.FC<Campus3DSceneProps> = ({
             position={[20, 0, -10]}
             onClick={(e) => {
               e.stopPropagation();
-              if (loc) onSelectLocation(loc);
+              if (e.delta < 5 && loc) onSelectLocation(loc);
             }}
             onPointerOver={(e) => {
               e.stopPropagation();
@@ -349,7 +358,7 @@ export const Campus3DScene: React.FC<Campus3DSceneProps> = ({
             position={[-120, 0, -40]}
             onClick={(e) => {
               e.stopPropagation();
-              if (loc) onSelectLocation(loc);
+              if (e.delta < 5 && loc) onSelectLocation(loc);
             }}
             onPointerOver={(e) => {
               e.stopPropagation();
@@ -419,7 +428,7 @@ export const Campus3DScene: React.FC<Campus3DSceneProps> = ({
             position={[-80, 0, -85]}
             onClick={(e) => {
               e.stopPropagation();
-              if (loc) onSelectLocation(loc);
+              if (e.delta < 5 && loc) onSelectLocation(loc);
             }}
             onPointerOver={(e) => {
               e.stopPropagation();
@@ -494,7 +503,7 @@ export const Campus3DScene: React.FC<Campus3DSceneProps> = ({
             position={[loc.map_x, 0, loc.map_z]}
             onClick={(e) => {
               e.stopPropagation();
-              onSelectLocation(loc);
+              if (e.delta < 5) onSelectLocation(loc);
             }}
             onPointerOver={(e) => {
               e.stopPropagation();

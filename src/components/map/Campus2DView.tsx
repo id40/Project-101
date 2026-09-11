@@ -8,7 +8,7 @@ import { ZoomIn, ZoomOut, RotateCcw } from 'lucide-react';
 interface Campus2DViewProps {
   locations: CampusLocation[];
   selectedLocation: CampusLocation | null;
-  onSelectLocation: (loc: CampusLocation) => void;
+  onSelectLocation: (loc: CampusLocation | null) => void;
   avatarPosition: [number, number, number];
   avatarHeading: number;
   avatarConfig: AvatarConfig;
@@ -53,6 +53,33 @@ export const Campus2DView: React.FC<Campus2DViewProps> = ({
 
   const handleMouseUp = () => setIsDragging(false);
 
+  // Mobile Touch Panning
+  const handleTouchStart = (e: React.TouchEvent) => {
+    if (e.touches.length === 1) {
+      setIsDragging(true);
+      dragStart.current = {
+        x: e.touches[0].clientX,
+        y: e.touches[0].clientY,
+        panX: pan.x,
+        panY: pan.y,
+      };
+    }
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!isDragging || e.touches.length !== 1) return;
+    const dx = e.touches[0].clientX - dragStart.current.x;
+    const dy = e.touches[0].clientY - dragStart.current.y;
+    setPan({ x: dragStart.current.panX + dx, y: dragStart.current.panY + dy });
+  };
+
+  const handleTouchEnd = () => setIsDragging(false);
+
+  // Mouse Wheel Smooth Zoom
+  const handleWheel = (e: React.WheelEvent) => {
+    setZoom((z) => Math.max(0.65, Math.min(2.8, z - e.deltaY * 0.0012)));
+  };
+
   const resetView = () => {
     setZoom(1);
     setPan({ x: 0, y: 0 });
@@ -74,6 +101,10 @@ export const Campus2DView: React.FC<Campus2DViewProps> = ({
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}
       onMouseLeave={handleMouseUp}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+      onWheel={handleWheel}
       style={{ cursor: isDragging ? 'grabbing' : 'grab' }}
     >
       {/* Sector Filter Bar */}
@@ -148,7 +179,13 @@ export const Campus2DView: React.FC<Campus2DViewProps> = ({
           </defs>
 
           {/* Blueprint Grid Background */}
-          <rect width="1000" height="850" fill="url(#grid)" />
+          <rect
+            width="1000"
+            height="850"
+            fill="url(#grid)"
+            onClick={() => onSelectLocation(null)}
+            className="cursor-pointer"
+          />
 
           {/* Grand Trunk Road (NH-1) */}
           <line
