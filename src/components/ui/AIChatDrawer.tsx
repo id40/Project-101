@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { X, Sparkles, Send, Bot, User, MapPin, Navigation, Layers } from 'lucide-react';
+import { X, Sparkles, Send, Bot, User, MapPin, Navigation, Layers, Cpu } from 'lucide-react';
 import { CampusLocation } from '@/types/campus';
 
 interface Message {
@@ -9,6 +9,7 @@ interface Message {
   text: string;
   actionLocationId?: string;
   actionType?: 'navigate' | 'indoor' | 'focus';
+  poweredBy?: string;
 }
 
 interface AIChatDrawerProps {
@@ -29,7 +30,8 @@ export const AIChatDrawer: React.FC<AIChatDrawerProps> = ({
   const [messages, setMessages] = useState<Message[]>([
     {
       role: 'assistant',
-      text: "👋 **Hello! I'm your verified LPU Campus Assistant.**\nAsk me about any academic block, classroom, food court, hostel curfew, salon services, or emergency help!",
+      text: "👋 **Hello! I'm your LPU Campus Assistant powered by Google Gemini.**\nAsk me about any academic block, classroom, food court, hostel curfew, salon services, or emergency help!",
+      poweredBy: 'gemini-2.5-flash',
     },
   ]);
   const [input, setInput] = useState('');
@@ -65,6 +67,7 @@ export const AIChatDrawer: React.FC<AIChatDrawerProps> = ({
           text: data.reply || "I don't have verified information about that yet.",
           actionLocationId: data.actionLocationId,
           actionType: data.actionType,
+          poweredBy: data.poweredBy,
         },
       ]);
       if (data.quickReplies && data.quickReplies.length > 0) {
@@ -111,14 +114,15 @@ export const AIChatDrawer: React.FC<AIChatDrawerProps> = ({
         {/* Header */}
         <div className="flex items-center justify-between p-4 border-b border-slate-800 bg-[#0F172A]">
           <div className="flex items-center gap-2.5">
-            <div className="w-9 h-9 rounded-2xl bg-gradient-to-tr from-[#635BFF] to-[#38BDF8] flex items-center justify-center text-white shadow-lg shadow-[#635BFF]/30">
-              <Sparkles className="w-5 h-5" />
+            <div className="w-9 h-9 rounded-2xl bg-gradient-to-tr from-[#635BFF] via-[#38BDF8] to-pink-500 flex items-center justify-center text-white shadow-lg shadow-[#635BFF]/30">
+              <Sparkles className="w-5 h-5 animate-pulse" />
             </div>
             <div>
               <h3 className="font-bold text-sm text-white flex items-center gap-1.5">
-                LPU Campus AI Buddy
-                <span className="text-[9px] bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 font-semibold px-1.5 py-0.2 rounded-full">
-                  VERIFIED
+                LPU Campus Assistant
+                <span className="flex items-center gap-1 text-[9px] bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-cyan-300 border border-cyan-500/40 font-semibold px-2 py-0.5 rounded-full">
+                  <Cpu className="w-2.5 h-2.5 text-cyan-400" />
+                  Gemini AI
                 </span>
               </h3>
               <p className="text-[11px] text-cyan-300 font-medium">All 40+ Blocks, Hostels, Food & Timings</p>
@@ -171,6 +175,14 @@ export const AIChatDrawer: React.FC<AIChatDrawerProps> = ({
                   }`}
                 >
                   <div className="space-y-1">{renderFormattedText(m.text)}</div>
+
+                  {/* Powered By pill */}
+                  {m.role === 'assistant' && (
+                    <div className="mt-2 text-[9px] text-slate-400 flex items-center gap-1">
+                      <Sparkles className="w-2.5 h-2.5 text-cyan-400" />
+                      <span>{m.poweredBy === 'gemini-2.5-flash' ? 'Google Gemini 2.5 Flash' : 'LPU Verified Knowledge Engine'}</span>
+                    </div>
+                  )}
 
                   {/* Interactive Action Buttons */}
                   {m.actionLocationId && loc && (
@@ -225,7 +237,7 @@ export const AIChatDrawer: React.FC<AIChatDrawerProps> = ({
           {isLoading && (
             <div className="flex items-center gap-2 text-xs text-slate-400 p-2 bg-slate-900/60 rounded-xl border border-slate-800/60 w-fit">
               <Sparkles className="w-3.5 h-3.5 animate-spin text-cyan-400" />
-              <span>Consulting verified campus records…</span>
+              <span>Gemini is thinking…</span>
             </div>
           )}
         </div>
