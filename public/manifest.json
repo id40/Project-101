@@ -1,0 +1,17 @@
+{
+  "name": "LPU 3D Campus Navigator",
+  "short_name": "LPU 3D Map",
+  "description": "Interactive 3D & 2D Hybrid University Navigator with Indoor Turn-by-Turn, Real-time GPS & Digital Campus ID",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0F172A",
+  "theme_color": "#635BFF",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
