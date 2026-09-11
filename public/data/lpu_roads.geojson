@@ -1,0 +1,216 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            75.7085,
+            31.25
+          ],
+          [
+            75.7065,
+            31.2515
+          ],
+          [
+            75.704,
+            31.253
+          ]
+        ]
+      },
+      "properties": {
+        "id": "r-gt",
+        "name": "GT Road (NH-44)",
+        "highway_type": "primary",
+        "width_m": 20,
+        "walkable": true,
+        "vehicle_access": true,
+        "surface": "asphalt"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            75.7065,
+            31.2515
+          ],
+          [
+            75.705,
+            31.2525
+          ],
+          [
+            75.703,
+            31.2535
+          ]
+        ]
+      },
+      "properties": {
+        "id": "r-prom",
+        "name": "Campus Main Promenade",
+        "highway_type": "service",
+        "width_m": 12,
+        "walkable": true,
+        "vehicle_access": true,
+        "surface": "paved"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            75.7032,
+            31.2533
+          ],
+          [
+            75.702,
+            31.2535
+          ],
+          [
+            75.7008,
+            31.2538
+          ],
+          [
+            75.701,
+            31.2543
+          ]
+        ]
+      },
+      "properties": {
+        "id": "r-spine",
+        "name": "Academic Spine Road",
+        "highway_type": "service",
+        "width_m": 10,
+        "walkable": true,
+        "vehicle_access": true,
+        "surface": "paved"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            75.7055,
+            31.2535
+          ],
+          [
+            75.7052,
+            31.254
+          ],
+          [
+            75.7048,
+            31.2545
+          ]
+        ]
+      },
+      "properties": {
+        "id": "r-ering",
+        "name": "East Ring Road",
+        "highway_type": "service",
+        "width_m": 8,
+        "walkable": true,
+        "vehicle_access": true,
+        "surface": "asphalt"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            75.6985,
+            31.2555
+          ],
+          [
+            75.699,
+            31.2551
+          ],
+          [
+            75.6998,
+            31.2546
+          ]
+        ]
+      },
+      "properties": {
+        "id": "r-wring",
+        "name": "West Ring Road",
+        "highway_type": "service",
+        "width_m": 8,
+        "walkable": true,
+        "vehicle_access": true,
+        "surface": "asphalt"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            75.7025,
+            31.2552
+          ],
+          [
+            75.7015,
+            31.2554
+          ],
+          [
+            75.7005,
+            31.2557
+          ]
+        ]
+      },
+      "properties": {
+        "id": "r-hostel",
+        "name": "Hostel Avenue",
+        "highway_type": "service",
+        "width_m": 10,
+        "walkable": true,
+        "vehicle_access": true,
+        "surface": "asphalt"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            75.7032,
+            31.2533
+          ],
+          [
+            75.7032,
+            31.2537
+          ],
+          [
+            75.7042,
+            31.2538
+          ],
+          [
+            75.7055,
+            31.2535
+          ]
+        ]
+      },
+      "properties": {
+        "id": "r-circle",
+        "name": "Central Circle Road",
+        "highway_type": "service",
+        "width_m": 8,
+        "walkable": true,
+        "vehicle_access": true,
+        "surface": "paved"
+      }
+    }
+  ]
+}

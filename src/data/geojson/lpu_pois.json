@@ -1,0 +1,3800 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70042578571429,
+          31.25389954285714
+        ]
+      },
+      "properties": {
+        "id": "b-34_poi",
+        "building_id": "b-34",
+        "name": "Block 34 - Computer Science & Engineering",
+        "block_code": "B-34",
+        "category": "academic",
+        "description": "School of Computer Science & Engineering (SCSE). Home to Apple iOS Developer Academy, NVIDIA AI Lab, and Google Developer Student Clubs.",
+        "icon": "academic",
+        "is_highlight": true,
+        "badge": "Premier Tech Hub"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70052594,
+          31.2538958
+        ]
+      },
+      "properties": {
+        "id": "b-33_poi",
+        "building_id": "b-33",
+        "name": "Block 33 - Computer Applications & IT",
+        "block_code": "B-33",
+        "category": "academic",
+        "description": "Department of Computer Applications, Cyber Security Lab, and Software Engineering incubation centers.",
+        "icon": "academic",
+        "is_highlight": false,
+        "badge": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.7006301,
+          31.2536687
+        ]
+      },
+      "properties": {
+        "id": "b-35_poi",
+        "building_id": "b-35",
+        "name": "Block 35 - Shanti Devi Mittal Auditorium",
+        "block_code": "B-35",
+        "category": "auditorium",
+        "description": "Central air-conditioned auditorium with 2,500+ seating capacity for academic convocations, national hackathons, and tech symposiums.",
+        "icon": "auditorium",
+        "is_highlight": true,
+        "badge": "Grand Auditorium"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70133017142858,
+          31.253884714285714
+        ]
+      },
+      "properties": {
+        "id": "b-32_poi",
+        "building_id": "b-32",
+        "name": "Block 32 - Division of Career Services & Admissions",
+        "block_code": "B-32",
+        "category": "administration",
+        "description": "Central Placement Office, Corporate Relations, International Student Affairs, and Career Advisory Centers.",
+        "icon": "administration",
+        "is_highlight": true,
+        "badge": "Career & Placement HQ"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70101842,
+          31.25388102
+        ]
+      },
+      "properties": {
+        "id": "b-36_poi",
+        "building_id": "b-36",
+        "name": "Block 36 - School of Electronics & Electrical Engineering",
+        "block_code": "B-36",
+        "category": "academic",
+        "description": "School of Electronics & Electrical Engineering (SEEE), Embedded Systems, IoT, and VLSI Design laboratories.",
+        "icon": "academic",
+        "is_highlight": false,
+        "badge": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70088184444444,
+          31.25387997777778
+        ]
+      },
+      "properties": {
+        "id": "b-37_poi",
+        "building_id": "b-37",
+        "name": "Block 37 - Research & Innovation Block",
+        "block_code": "B-37",
+        "category": "academic",
+        "description": "Central Research & Development Block, patent facilitation center, and postgraduate doctoral research suites.",
+        "icon": "academic",
+        "is_highlight": false,
+        "badge": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70126512,
+          31.253874740000004
+        ]
+      },
+      "properties": {
+        "id": "b-38_poi",
+        "building_id": "b-38",
+        "name": "Block 38 - School of Civil Engineering",
+        "block_code": "B-38",
+        "category": "academic",
+        "description": "Department of Civil Engineering, structural testing bays, concrete technology lab, and surveying facility.",
+        "icon": "academic",
+        "is_highlight": false,
+        "badge": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70042332857143,
+          31.253666442857142
+        ]
+      },
+      "properties": {
+        "id": "b-30_poi",
+        "building_id": "b-30",
+        "name": "Block 30 - Pro-Chancellor Executive Secretariat",
+        "block_code": "B-30",
+        "category": "administration",
+        "description": "Executive offices of the Pro-Chancellor, academic council chambers, and university governance.",
+        "icon": "administration",
+        "is_highlight": false,
+        "badge": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70115618,
+          31.25365984
+        ]
+      },
+      "properties": {
+        "id": "b-31_poi",
+        "building_id": "b-31",
+        "name": "Block 31 - Chancellor Secretariat & Administration",
+        "block_code": "B-31",
+        "category": "administration",
+        "description": "Office of the Chancellor, Vice-Chancellor suites, and senior administrative governance.",
+        "icon": "administration",
+        "is_highlight": false,
+        "badge": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70132100000001,
+          31.253650085714288
+        ]
+      },
+      "properties": {
+        "id": "b-29_poi",
+        "building_id": "b-29",
+        "name": "Block 29 - Central Administrative Headquarters",
+        "block_code": "B-29",
+        "category": "administration",
+        "description": "Finance & Accounts, Human Resources, Examination Division, and Student Record Cell.",
+        "icon": "administration",
+        "is_highlight": false,
+        "badge": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70041532857144,
+          31.253424714285718
+        ]
+      },
+      "properties": {
+        "id": "b-25-26_poi",
+        "building_id": "b-25-26",
+        "name": "Blocks 25 & 26 - School of Agriculture",
+        "block_code": "B-25/26",
+        "category": "academic",
+        "description": "School of Agriculture (SAGR), agronomy research laboratories, soil science test facilities, and polyhouses.",
+        "icon": "academic",
+        "is_highlight": false,
+        "badge": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70075578000001,
+          31.2534148
+        ]
+      },
+      "properties": {
+        "id": "b-27_poi",
+        "building_id": "b-27",
+        "name": "Block 27 - School of Chemical & Physical Sciences",
+        "block_code": "B-27",
+        "category": "academic",
+        "description": "Department of Physics & Chemistry, analytical instrumentation facility, and spectroscopy labs.",
+        "icon": "academic",
+        "is_highlight": false,
+        "badge": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70099480000002,
+          31.253412019999995
+        ]
+      },
+      "properties": {
+        "id": "b-28_poi",
+        "building_id": "b-28",
+        "name": "Block 28 - School of Biotechnology & Bioengineering",
+        "block_code": "B-28",
+        "category": "academic",
+        "description": "School of Biotechnology and Biosciences, genomics sequencing suite, and bioinformatics lab.",
+        "icon": "academic",
+        "is_highlight": false,
+        "badge": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.7049754,
+          31.25560816153847
+        ]
+      },
+      "properties": {
+        "id": "b-15-unimall_poi",
+        "building_id": "b-15-unimall",
+        "name": "UniMall & Block 15 (Hotel Management)",
+        "block_code": "UNIMALL",
+        "category": "shopping",
+        "description": "Campus shopping & entertainment mega-complex. Includes 3-tier food court, bowling alley, branded stores, electronics shops, and ATMs.",
+        "icon": "shopping",
+        "is_highlight": true,
+        "badge": "Campus Lifestyle Mall"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70471348750002,
+          31.25501481875
+        ]
+      },
+      "properties": {
+        "id": "unipolis_poi",
+        "building_id": "unipolis",
+        "name": "Unipolis Grand Amphitheatre & Plaza",
+        "block_code": "UNIPOLIS",
+        "category": "auditorium",
+        "description": "LPU iconic covered central amphitheatre and public plaza with 10,000+ capacity for youth festivals, celebrity concerts, and cultural galas.",
+        "icon": "auditorium",
+        "is_highlight": true,
+        "badge": "10,000+ Mega Amphitheatre"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70550306666667,
+          31.25454158333333
+        ]
+      },
+      "properties": {
+        "id": "b-13-14_poi",
+        "building_id": "b-13-14",
+        "name": "Blocks 13 & 14 - Mittal School of Business & DSW",
+        "block_code": "B-13/14",
+        "category": "academic",
+        "description": "Mittal School of Business (MHRD NIRF Ranked), Division of Student Welfare (DSW), and Student Organization Council.",
+        "icon": "academic",
+        "is_highlight": true,
+        "badge": "Top Business School"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70331243043479,
+          31.255268373913054
+        ]
+      },
+      "properties": {
+        "id": "b-18_poi",
+        "building_id": "b-18",
+        "name": "Block 18 - School of Education & Humanities",
+        "block_code": "B-18",
+        "category": "academic",
+        "description": "School of Education, Humanities, Social Sciences, and language immersion laboratories.",
+        "icon": "academic",
+        "is_highlight": false,
+        "badge": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70403689999999,
+          31.25523372
+        ]
+      },
+      "properties": {
+        "id": "b-20_poi",
+        "building_id": "b-20",
+        "name": "Block 20 - School of Law & Journalism (LIT Market)",
+        "block_code": "B-20",
+        "category": "academic",
+        "description": "School of Law, Moot Court Hall, Legal Aid Clinic, School of Journalism & Mass Communication, and LIT market food stalls.",
+        "icon": "academic",
+        "is_highlight": false,
+        "badge": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.704665925,
+          31.256288181250007
+        ]
+      },
+      "properties": {
+        "id": "b-47-indoor-stadium_poi",
+        "building_id": "b-47-indoor-stadium",
+        "name": "Block 47 - Indoor Sports Stadium Complex",
+        "block_code": "B-47",
+        "category": "sports",
+        "description": "International-standard multi-discipline indoor stadium featuring badminton courts, basketball courts, squash, gymnastics, and shooting range.",
+        "icon": "sports",
+        "is_highlight": true,
+        "badge": "Olympic-Standard Sports Arena"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70393362499999,
+          31.2560661875
+        ]
+      },
+      "properties": {
+        "id": "apartments-41-44_poi",
+        "building_id": "apartments-41-44",
+        "name": "Apartments 41-44 Complex",
+        "block_code": "APT-41-44",
+        "category": "residential",
+        "description": "Faculty residences, international visiting scholar suites, and university apartment towers.",
+        "icon": "residential",
+        "is_highlight": false,
+        "badge": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.7047192,
+          31.256864690909094
+        ]
+      },
+      "properties": {
+        "id": "bh-1-2_poi",
+        "building_id": "bh-1-2",
+        "name": "Boys Hostels BH-1 & BH-2 Complex",
+        "block_code": "BH-1/2",
+        "category": "hostel",
+        "description": "Major boys hostel towers featuring air-cooled rooms, in-house mess, food kiosks, and 24/7 biometric security.",
+        "icon": "hostel",
+        "is_highlight": true,
+        "badge": "Student Living"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70464444545455,
+          31.256633045454546
+        ]
+      },
+      "properties": {
+        "id": "bh-3-4_poi",
+        "building_id": "bh-3-4",
+        "name": "Boys Hostels BH-3 & BH-4 Complex",
+        "block_code": "BH-3/4",
+        "category": "hostel",
+        "description": "Modern student residences with recreation rooms, indoor gaming, high-speed Wi-Fi, and laundry facilities.",
+        "icon": "hostel",
+        "is_highlight": false,
+        "badge": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70543141538461,
+          31.256921876923077
+        ]
+      },
+      "properties": {
+        "id": "bh-5-8_poi",
+        "building_id": "bh-5-8",
+        "name": "Boys Hostels BH-5 to BH-8 Cluster",
+        "block_code": "BH-5-8",
+        "category": "hostel",
+        "description": "Spacious residential hostel blocks with central court, volleyball ground, and night study library.",
+        "icon": "hostel",
+        "is_highlight": false,
+        "badge": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70373228846155,
+          31.2519868
+        ]
+      },
+      "properties": {
+        "id": "central-library_poi",
+        "building_id": "central-library",
+        "name": "Central University Library & Research Archives",
+        "block_code": "LIBRARY",
+        "category": "library",
+        "description": "Multi-storey central library holding 1.5 million+ printed volumes, digital repository, silent study halls, and PhD thesis research cabins.",
+        "icon": "library",
+        "is_highlight": true,
+        "badge": "1.5M+ Volumes Central Library"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70397766333332,
+          31.252099366666663
+        ]
+      },
+      "properties": {
+        "id": "b-03_poi",
+        "building_id": "b-03",
+        "name": "Block 3 - School of Physiotherapy & Health Sciences",
+        "block_code": "B-03",
+        "category": "academic",
+        "description": "School of Physiotherapy, Rehabilitation Center, Clinical Assessment Suites, and Anatomy Museums.",
+        "icon": "academic",
+        "is_highlight": false,
+        "badge": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70474057777778,
+          31.251020377777778
+        ]
+      },
+      "properties": {
+        "id": "b-02_poi",
+        "building_id": "b-02",
+        "name": "Block 2 - Baldev Raj Mittal Auditorium",
+        "block_code": "B-02",
+        "category": "auditorium",
+        "description": "Premier cultural theatre and seminar hall with professional stage lighting and acoustic design.",
+        "icon": "auditorium",
+        "is_highlight": true,
+        "badge": "Baldev Raj Auditorium"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70327835172414,
+          31.247934862068963
+        ]
+      },
+      "properties": {
+        "id": "b-01_poi",
+        "building_id": "b-01",
+        "name": "Block 1 - School of Fashion Design & Technology",
+        "block_code": "B-01",
+        "category": "academic",
+        "description": "School of Fashion Design, Garment Construction Studios, Pattern Making Labs, and Runway Ramp Hall.",
+        "icon": "academic",
+        "is_highlight": false,
+        "badge": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70348588181818,
+          31.247142604545456
+        ]
+      },
+      "properties": {
+        "id": "gate-01_poi",
+        "building_id": "gate-01",
+        "name": "Main Gate 1 Entrance (NH-44 GT Road)",
+        "block_code": "GATE-1",
+        "category": "gate",
+        "description": "Primary ceremonial campus gateway facing National Highway 44 (GT Road) with 24/7 security checkpoint and visitor registration.",
+        "icon": "gate",
+        "is_highlight": true,
+        "badge": "Main Campus Gateway"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70375047826089,
+          31.24672242608695
+        ]
+      },
+      "properties": {
+        "id": "main-parking_poi",
+        "building_id": "main-parking",
+        "name": "LPU Main Parking & Security Complex",
+        "block_code": "PARKING-1",
+        "category": "parking",
+        "description": "Multi-acre designated parking area for buses, student vehicles, staff cars, and EV charging stations.",
+        "icon": "parking",
+        "is_highlight": false,
+        "badge": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70470506129031,
+          31.251917441935483
+        ]
+      },
+      "properties": {
+        "id": "gh-complex_poi",
+        "building_id": "gh-complex",
+        "name": "Girls Hostel Complex (GH 9-12, 21)",
+        "block_code": "GH-COMPLEX",
+        "category": "hostel",
+        "description": "Secure gated residential community for female students with internal dining, gym, shopping stalls, and parks.",
+        "icon": "hostel",
+        "is_highlight": true,
+        "badge": "Girls Residences"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70718597391304,
+          31.25766163478261
+        ]
+      },
+      "properties": {
+        "id": "b-04-07_poi",
+        "building_id": "b-04-07",
+        "name": "Blocks 4 & 7 - Lovely Institute of Pharmacy",
+        "block_code": "B-04/07",
+        "category": "academic",
+        "description": "School of Pharmaceutical Sciences, Pharmacology labs, Drug Formulation Units, and Pilot Plant.",
+        "icon": "academic",
+        "is_highlight": false,
+        "badge": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70678442500001,
+          31.25793894375
+        ]
+      },
+      "properties": {
+        "id": "b-06_poi",
+        "building_id": "b-06",
+        "name": "Block 6 - Lovely Institute of Technology & Architecture",
+        "block_code": "B-06",
+        "category": "academic",
+        "description": "School of Architecture and Design, Drafting Studios, Woodworking Workshops, and 3D Model Making facility.",
+        "icon": "academic",
+        "is_highlight": false,
+        "badge": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70887093214286,
+          31.258622485714284
+        ]
+      },
+      "properties": {
+        "id": "lovely-management_poi",
+        "building_id": "lovely-management",
+        "name": "Lovely Institute of Management",
+        "block_code": "LIM",
+        "category": "academic",
+        "description": "Executive Management studies, international exchange programs, and executive development center.",
+        "icon": "academic",
+        "is_highlight": false,
+        "badge": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70099058235294,
+          31.254692841176475
+        ]
+      },
+      "properties": {
+        "id": "b-55-56_poi",
+        "building_id": "b-55-56",
+        "name": "Blocks 55 & 56 - Mechanical Engineering & Formula Student Workshop",
+        "block_code": "B-55/56",
+        "category": "academic",
+        "description": "School of Mechanical Engineering, Automotive Engineering, CNC Machining Center, and Formula Student Racecar Workshop.",
+        "icon": "academic",
+        "is_highlight": true,
+        "badge": "Formula Student Race Lab"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70145678461539,
+          31.255044553846155
+        ]
+      },
+      "properties": {
+        "id": "b-57-58_poi",
+        "building_id": "b-57-58",
+        "name": "Blocks 57 & 58 - Polytechnic & Student Project Labs",
+        "block_code": "B-57/58",
+        "category": "academic",
+        "description": "University Polytechnic wing, hands-on student hardware prototyping labs, and Capstone Project presentation suites.",
+        "icon": "academic",
+        "is_highlight": false,
+        "badge": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70320539565216,
+          31.248670530434786
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422323508_poi",
+        "building_id": "osm_bldg_422323508",
+        "name": "Campus Facility 1",
+        "block_code": "F-3508",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.7055599,
+          31.2543184
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422437888_poi",
+        "building_id": "osm_bldg_422437888",
+        "name": "Campus Facility 2",
+        "block_code": "F-7888",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70245434,
+          31.25156022
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422437894_poi",
+        "building_id": "osm_bldg_422437894",
+        "name": "Campus Facility 3",
+        "block_code": "F-7894",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.7020096,
+          31.251767640000004
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422437895_poi",
+        "building_id": "osm_bldg_422437895",
+        "name": "Campus Facility 4",
+        "block_code": "F-7895",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70169584,
+          31.251749
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422437896_poi",
+        "building_id": "osm_bldg_422437896",
+        "name": "Campus Facility 5",
+        "block_code": "F-7896",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70123632307693,
+          31.25170993076923
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422437897_poi",
+        "building_id": "osm_bldg_422437897",
+        "name": "Campus Facility 6",
+        "block_code": "F-7897",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70565361818181,
+          31.256524945454547
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422437902_poi",
+        "building_id": "osm_bldg_422437902",
+        "name": "Campus Facility 7",
+        "block_code": "F-7902",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70570041111111,
+          31.257050500000005
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422437906_poi",
+        "building_id": "osm_bldg_422437906",
+        "name": "Campus Facility 8",
+        "block_code": "F-7906",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.7056931888889,
+          31.256863811111113
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422437908_poi",
+        "building_id": "osm_bldg_422437908",
+        "name": "Campus Facility 9",
+        "block_code": "F-7908",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70742833125,
+          31.260069081250002
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422439516_poi",
+        "building_id": "osm_bldg_422439516",
+        "name": "Campus Facility 10",
+        "block_code": "F-9516",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70761682499999,
+          31.2601587375
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422439519_poi",
+        "building_id": "osm_bldg_422439519",
+        "name": "Campus Facility 11",
+        "block_code": "F-9519",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70769093636365,
+          31.25997898181818
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422439521_poi",
+        "building_id": "osm_bldg_422439521",
+        "name": "Campus Facility 12",
+        "block_code": "F-9521",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70786896499999,
+          31.259092199999998
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422547035_poi",
+        "building_id": "osm_bldg_422547035",
+        "name": "Campus Facility 13",
+        "block_code": "F-7035",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70360285384615,
+          31.248347684615382
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422547443_poi",
+        "building_id": "osm_bldg_422547443",
+        "name": "Campus Facility 14",
+        "block_code": "F-7443",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70383702222222,
+          31.248602233333333
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422547444_poi",
+        "building_id": "osm_bldg_422547444",
+        "name": "Campus Facility 15",
+        "block_code": "F-7444",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70385415555556,
+          31.24799946666667
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422547446_poi",
+        "building_id": "osm_bldg_422547446",
+        "name": "Campus Facility 16",
+        "block_code": "F-7446",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70382972857143,
+          31.246999992857145
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422547449_poi",
+        "building_id": "osm_bldg_422547449",
+        "name": "Campus Facility 17",
+        "block_code": "F-7449",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70388459230769,
+          31.246417176923078
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422547451_poi",
+        "building_id": "osm_bldg_422547451",
+        "name": "Campus Facility 18",
+        "block_code": "F-7451",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70361980909091,
+          31.246232999999997
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422547452_poi",
+        "building_id": "osm_bldg_422547452",
+        "name": "Campus Facility 19",
+        "block_code": "F-7452",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70374018,
+          31.246352260000002
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422547453_poi",
+        "building_id": "osm_bldg_422547453",
+        "name": "Campus Facility 20",
+        "block_code": "F-7453",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70381565999999,
+          31.246533300000003
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422547454_poi",
+        "building_id": "osm_bldg_422547454",
+        "name": "Campus Facility 21",
+        "block_code": "F-7454",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.7037719,
+          31.24688334
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422547455_poi",
+        "building_id": "osm_bldg_422547455",
+        "name": "Campus Facility 22",
+        "block_code": "F-7455",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70367008000001,
+          31.247066159999996
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422547456_poi",
+        "building_id": "osm_bldg_422547456",
+        "name": "Campus Facility 23",
+        "block_code": "F-7456",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70023835555554,
+          31.249653993333347
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422548297_poi",
+        "building_id": "osm_bldg_422548297",
+        "name": "Campus Facility 24",
+        "block_code": "F-8297",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.69945673243244,
+          31.248693864864865
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422548298_poi",
+        "building_id": "osm_bldg_422548298",
+        "name": "Campus Facility 25",
+        "block_code": "F-8298",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.6982668076923,
+          31.249597961538466
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422548299_poi",
+        "building_id": "osm_bldg_422548299",
+        "name": "Campus Facility 26",
+        "block_code": "F-8299",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.69999296190475,
+          31.25136923809524
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422548300_poi",
+        "building_id": "osm_bldg_422548300",
+        "name": "Campus Facility 27",
+        "block_code": "F-8300",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70086426153847,
+          31.25335697692308
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422548303_poi",
+        "building_id": "osm_bldg_422548303",
+        "name": "Campus Facility 28",
+        "block_code": "F-8303",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70132152857141,
+          31.253416499999997
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422548310_poi",
+        "building_id": "osm_bldg_422548310",
+        "name": "Campus Facility 29",
+        "block_code": "F-8310",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70136735882353,
+          31.254738517647056
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422548858_poi",
+        "building_id": "osm_bldg_422548858",
+        "name": "Campus Facility 30",
+        "block_code": "F-8858",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70675494545456,
+          31.2606165
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422550525_poi",
+        "building_id": "osm_bldg_422550525",
+        "name": "Campus Facility 31",
+        "block_code": "F-0525",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70687424,
+          31.260519820000003
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422550528_poi",
+        "building_id": "osm_bldg_422550528",
+        "name": "Campus Facility 32",
+        "block_code": "F-0528",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70346783913044,
+          31.245907886956523
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422551921_poi",
+        "building_id": "osm_bldg_422551921",
+        "name": "Campus Facility 33",
+        "block_code": "F-1921",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70286116,
+          31.251649959999998
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422551928_poi",
+        "building_id": "osm_bldg_422551928",
+        "name": "Campus Facility 34",
+        "block_code": "F-1928",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.71009730000002,
+          31.25603782857143
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422555764_poi",
+        "building_id": "osm_bldg_422555764",
+        "name": "Campus Facility 35",
+        "block_code": "F-5764",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.704106496,
+          31.252166180000003
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422556251_poi",
+        "building_id": "osm_bldg_422556251",
+        "name": "Campus Facility 36",
+        "block_code": "F-6251",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70419419999999,
+          31.252211016666667
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422556252_poi",
+        "building_id": "osm_bldg_422556252",
+        "name": "Campus Facility 37",
+        "block_code": "F-6252",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70422301111111,
+          31.25223195555556
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422556253_poi",
+        "building_id": "osm_bldg_422556253",
+        "name": "Campus Facility 38",
+        "block_code": "F-6253",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70806557142858,
+          31.258463799999998
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422732974_poi",
+        "building_id": "osm_bldg_422732974",
+        "name": "Campus Facility 39",
+        "block_code": "F-2974",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70049834,
+          31.248748720000002
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422738863_poi",
+        "building_id": "osm_bldg_422738863",
+        "name": "Campus Facility 40",
+        "block_code": "F-8863",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70138456,
+          31.245853419999996
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422738864_poi",
+        "building_id": "osm_bldg_422738864",
+        "name": "Campus Facility 41",
+        "block_code": "F-8864",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70425272,
+          31.24593132
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422738867_poi",
+        "building_id": "osm_bldg_422738867",
+        "name": "Campus Facility 42",
+        "block_code": "F-8867",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70454014,
+          31.245920239999997
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422738868_poi",
+        "building_id": "osm_bldg_422738868",
+        "name": "Campus Facility 43",
+        "block_code": "F-8868",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70453826,
+          31.245991019999998
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422738869_poi",
+        "building_id": "osm_bldg_422738869",
+        "name": "Campus Facility 44",
+        "block_code": "F-8869",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.7045349,
+          31.24611046
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422738870_poi",
+        "building_id": "osm_bldg_422738870",
+        "name": "Campus Facility 45",
+        "block_code": "F-8870",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70424575714286,
+          31.246264371428573
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422738871_poi",
+        "building_id": "osm_bldg_422738871",
+        "name": "Campus Facility 46",
+        "block_code": "F-8871",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70441745999999,
+          31.247069520000004
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422738874_poi",
+        "building_id": "osm_bldg_422738874",
+        "name": "Campus Facility 47",
+        "block_code": "F-8874",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70451456,
+          31.24679028
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422738876_poi",
+        "building_id": "osm_bldg_422738876",
+        "name": "Campus Facility 48",
+        "block_code": "F-8876",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70463224,
+          31.24701298
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422738877_poi",
+        "building_id": "osm_bldg_422738877",
+        "name": "Campus Facility 49",
+        "block_code": "F-8877",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70130534,
+          31.25409578
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422738883_poi",
+        "building_id": "osm_bldg_422738883",
+        "name": "Campus Facility 50",
+        "block_code": "F-8883",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70016790000001,
+          31.254744119999998
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422738888_poi",
+        "building_id": "osm_bldg_422738888",
+        "name": "Campus Facility 51",
+        "block_code": "F-8888",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70051144,
+          31.25508206
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422738889_poi",
+        "building_id": "osm_bldg_422738889",
+        "name": "Campus Facility 52",
+        "block_code": "F-8889",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70071599999999,
+          31.25535106
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422738890_poi",
+        "building_id": "osm_bldg_422738890",
+        "name": "Campus Facility 53",
+        "block_code": "F-8890",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70066632000001,
+          31.25555094
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422738892_poi",
+        "building_id": "osm_bldg_422738892",
+        "name": "Campus Facility 54",
+        "block_code": "F-8892",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70076482,
+          31.255082119999997
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422738893_poi",
+        "building_id": "osm_bldg_422738893",
+        "name": "Campus Facility 55",
+        "block_code": "F-8893",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70080346,
+          31.25556166
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422738894_poi",
+        "building_id": "osm_bldg_422738894",
+        "name": "Campus Facility 56",
+        "block_code": "F-8894",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70788496,
+          31.2574214
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422738980_poi",
+        "building_id": "osm_bldg_422738980",
+        "name": "Campus Facility 57",
+        "block_code": "F-8980",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70824722,
+          31.257665599999996
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422738981_poi",
+        "building_id": "osm_bldg_422738981",
+        "name": "Campus Facility 58",
+        "block_code": "F-8981",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70023466,
+          31.250451320000003
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422820537_poi",
+        "building_id": "osm_bldg_422820537",
+        "name": "Campus Facility 59",
+        "block_code": "F-0537",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70054688,
+          31.250634780000002
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422820538_poi",
+        "building_id": "osm_bldg_422820538",
+        "name": "Campus Facility 60",
+        "block_code": "F-0538",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70377177777779,
+          31.249371033333336
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422820545_poi",
+        "building_id": "osm_bldg_422820545",
+        "name": "Campus Facility 61",
+        "block_code": "F-0545",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70480402,
+          31.251057859999996
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422823419_poi",
+        "building_id": "osm_bldg_422823419",
+        "name": "Campus Facility 62",
+        "block_code": "F-3419",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70323314054055,
+          31.252675083783785
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422823421_poi",
+        "building_id": "osm_bldg_422823421",
+        "name": "Campus Facility 63",
+        "block_code": "F-3421",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70241152,
+          31.25283362
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422823422_poi",
+        "building_id": "osm_bldg_422823422",
+        "name": "Campus Facility 64",
+        "block_code": "F-3422",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.7045867125,
+          31.252582325
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422823423_poi",
+        "building_id": "osm_bldg_422823423",
+        "name": "Campus Facility 65",
+        "block_code": "F-3423",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70479209999999,
+          31.25272503
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422823424_poi",
+        "building_id": "osm_bldg_422823424",
+        "name": "Campus Facility 66",
+        "block_code": "F-3424",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70495709,
+          31.252722400000003
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422823425_poi",
+        "building_id": "osm_bldg_422823425",
+        "name": "Campus Facility 67",
+        "block_code": "F-3425",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70487359999998,
+          31.252702445454542
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422823426_poi",
+        "building_id": "osm_bldg_422823426",
+        "name": "Campus Facility 68",
+        "block_code": "F-3426",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70487156666667,
+          31.252664422222225
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422823427_poi",
+        "building_id": "osm_bldg_422823427",
+        "name": "Campus Facility 69",
+        "block_code": "F-3427",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70486860000001,
+          31.25261745714286
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422823428_poi",
+        "building_id": "osm_bldg_422823428",
+        "name": "Campus Facility 70",
+        "block_code": "F-3428",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70565264,
+          31.25108012
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422823430_poi",
+        "building_id": "osm_bldg_422823430",
+        "name": "Campus Facility 71",
+        "block_code": "F-3430",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70777486666665,
+          31.259309444444447
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422823980_poi",
+        "building_id": "osm_bldg_422823980",
+        "name": "Campus Facility 72",
+        "block_code": "F-3980",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70893304,
+          31.25935640000001
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422823981_poi",
+        "building_id": "osm_bldg_422823981",
+        "name": "Campus Facility 73",
+        "block_code": "F-3981",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70278935641025,
+          31.251349225641032
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422886524_poi",
+        "building_id": "osm_bldg_422886524",
+        "name": "Campus Facility 74",
+        "block_code": "F-6524",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.7029723375,
+          31.251548312500006
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422886526_poi",
+        "building_id": "osm_bldg_422886526",
+        "name": "Campus Facility 75",
+        "block_code": "F-6526",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70278165365853,
+          31.25154846585366
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_422886528_poi",
+        "building_id": "osm_bldg_422886528",
+        "name": "Campus Facility 76",
+        "block_code": "F-6528",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70685266000001,
+          31.25619274
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_425717556_poi",
+        "building_id": "osm_bldg_425717556",
+        "name": "Campus Facility 77",
+        "block_code": "F-7556",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.7070043,
+          31.256213099999997
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_425717558_poi",
+        "building_id": "osm_bldg_425717558",
+        "name": "Campus Facility 78",
+        "block_code": "F-7558",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70681524285715,
+          31.2581217
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_426283204_poi",
+        "building_id": "osm_bldg_426283204",
+        "name": "Campus Facility 79",
+        "block_code": "F-3204",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70484666,
+          31.25256452
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_426284154_poi",
+        "building_id": "osm_bldg_426284154",
+        "name": "Campus Facility 80",
+        "block_code": "F-4154",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70746330000001,
+          31.260340340000006
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_426285002_poi",
+        "building_id": "osm_bldg_426285002",
+        "name": "Campus Facility 81",
+        "block_code": "F-5002",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70416584,
+          31.25535482
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_426529404_poi",
+        "building_id": "osm_bldg_426529404",
+        "name": "Campus Facility 82",
+        "block_code": "F-9404",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70416156000002,
+          31.25458162
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_426529405_poi",
+        "building_id": "osm_bldg_426529405",
+        "name": "Campus Facility 83",
+        "block_code": "F-9405",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70528814000001,
+          31.255347640000004
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_426529406_poi",
+        "building_id": "osm_bldg_426529406",
+        "name": "Campus Facility 84",
+        "block_code": "F-9406",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70483426000001,
+          31.25457746
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_426529407_poi",
+        "building_id": "osm_bldg_426529407",
+        "name": "Campus Facility 85",
+        "block_code": "F-9407",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70529302,
+          31.255092819999998
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_426529408_poi",
+        "building_id": "osm_bldg_426529408",
+        "name": "Campus Facility 86",
+        "block_code": "F-9408",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70707284,
+          31.25803002
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_426529781_poi",
+        "building_id": "osm_bldg_426529781",
+        "name": "Campus Facility 87",
+        "block_code": "F-9781",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.7079136375,
+          31.258207125
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_427330237_poi",
+        "building_id": "osm_bldg_427330237",
+        "name": "Campus Facility 88",
+        "block_code": "F-0237",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70784503157894,
+          31.258390610526316
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_427330238_poi",
+        "building_id": "osm_bldg_427330238",
+        "name": "Campus Facility 89",
+        "block_code": "F-0238",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70331243043479,
+          31.255268373913054
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_675395630_poi",
+        "building_id": "osm_bldg_675395630",
+        "name": "Campus Facility 90",
+        "block_code": "F-5630",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.69896886666666,
+          31.252009916666665
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_1299137613_poi",
+        "building_id": "osm_bldg_1299137613",
+        "name": "Elem apartment",
+        "block_code": "F-7613",
+        "category": "hostel",
+        "description": "LPU Campus Facility: Elem apartment",
+        "icon": "hostel",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.6987154,
+          31.252150999999998
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_1299447331_poi",
+        "building_id": "osm_bldg_1299447331",
+        "name": "prime apartment 2",
+        "block_code": "F-7331",
+        "category": "hostel",
+        "description": "LPU Campus Facility: prime apartment 2",
+        "icon": "hostel",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.69870894,
+          31.25225722
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_1299447332_poi",
+        "building_id": "osm_bldg_1299447332",
+        "name": "Diya apartment",
+        "block_code": "F-7332",
+        "category": "hostel",
+        "description": "LPU Campus Facility: Diya apartment",
+        "icon": "hostel",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.69851335,
+          31.254881975000004
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_1299813019_poi",
+        "building_id": "osm_bldg_1299813019",
+        "name": "desi & delicious",
+        "block_code": "F-3019",
+        "category": "academic",
+        "description": "LPU Campus Facility: desi & delicious",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.69913335999999,
+          31.2522071
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_1300687852_poi",
+        "building_id": "osm_bldg_1300687852",
+        "name": "Dimple Apartment",
+        "block_code": "F-7852",
+        "category": "hostel",
+        "description": "LPU Campus Facility: Dimple Apartment",
+        "icon": "hostel",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.69901961999999,
+          31.252195899999997
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_1300687853_poi",
+        "building_id": "osm_bldg_1300687853",
+        "name": "Avjot PG",
+        "block_code": "F-7853",
+        "category": "academic",
+        "description": "LPU Campus Facility: Avjot PG",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.69889057777777,
+          31.25224278888889
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_1300687854_poi",
+        "building_id": "osm_bldg_1300687854",
+        "name": "Campus Facility 91",
+        "block_code": "F-7854",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.69872677999999,
+          31.252054320000003
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_1300687855_poi",
+        "building_id": "osm_bldg_1300687855",
+        "name": "Campus Facility 92",
+        "block_code": "F-7855",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.69902806,
+          31.25201366
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_1300687856_poi",
+        "building_id": "osm_bldg_1300687856",
+        "name": "Campus Facility 93",
+        "block_code": "F-7856",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.69916348,
+          31.25204344
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_1300687857_poi",
+        "building_id": "osm_bldg_1300687857",
+        "name": "Campus Facility 94",
+        "block_code": "F-7857",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.69926026,
+          31.2521933
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_1300687858_poi",
+        "building_id": "osm_bldg_1300687858",
+        "name": "Campus Facility 95",
+        "block_code": "F-7858",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.69972898,
+          31.25208618
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_1300687861_poi",
+        "building_id": "osm_bldg_1300687861",
+        "name": "the grand castle",
+        "block_code": "F-7861",
+        "category": "academic",
+        "description": "LPU Campus Facility: the grand castle",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.69961772,
+          31.252075160000004
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_1300687862_poi",
+        "building_id": "osm_bldg_1300687862",
+        "name": "pheonix apartment",
+        "block_code": "F-7862",
+        "category": "hostel",
+        "description": "LPU Campus Facility: pheonix apartment",
+        "icon": "hostel",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.69926074,
+          31.252049999999997
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_1300687863_poi",
+        "building_id": "osm_bldg_1300687863",
+        "name": "Campus Facility 96",
+        "block_code": "F-7863",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.6993737,
+          31.252057200000003
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_1300687866_poi",
+        "building_id": "osm_bldg_1300687866",
+        "name": "Sanamdeep apartment",
+        "block_code": "F-7866",
+        "category": "hostel",
+        "description": "LPU Campus Facility: Sanamdeep apartment",
+        "icon": "hostel",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.69976352,
+          31.252367720000002
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_1300687868_poi",
+        "building_id": "osm_bldg_1300687868",
+        "name": "Campus Facility 97",
+        "block_code": "F-7868",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.69967663999999,
+          31.25235586
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_1300687869_poi",
+        "building_id": "osm_bldg_1300687869",
+        "name": "Campus Facility 98",
+        "block_code": "F-7869",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.69958988,
+          31.252344540000003
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_1300687870_poi",
+        "building_id": "osm_bldg_1300687870",
+        "name": "Campus Facility 99",
+        "block_code": "F-7870",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.6994787,
+          31.252212880000002
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_1300687872_poi",
+        "building_id": "osm_bldg_1300687872",
+        "name": "Campus Facility 100",
+        "block_code": "F-7872",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.69929796,
+          31.25231422
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_1300687873_poi",
+        "building_id": "osm_bldg_1300687873",
+        "name": "Campus Facility 101",
+        "block_code": "F-7873",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.69941322000001,
+          31.2523279
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_1300687874_poi",
+        "building_id": "osm_bldg_1300687874",
+        "name": "Campus Facility 102",
+        "block_code": "F-7874",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.69863692857143,
+          31.252374900000003
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_1300687875_poi",
+        "building_id": "osm_bldg_1300687875",
+        "name": "Campus Facility 103",
+        "block_code": "F-7875",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.69878018,
+          31.252764860000003
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_1300687876_poi",
+        "building_id": "osm_bldg_1300687876",
+        "name": "Campus Facility 104",
+        "block_code": "F-7876",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.69920784000001,
+          31.252523280000002
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_1300687877_poi",
+        "building_id": "osm_bldg_1300687877",
+        "name": "Campus Facility 105",
+        "block_code": "F-7877",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.6999202,
+          31.2524286375
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_1300687878_poi",
+        "building_id": "osm_bldg_1300687878",
+        "name": "Campus Facility 106",
+        "block_code": "F-7878",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.69814158,
+          31.251819359999995
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_1300687880_poi",
+        "building_id": "osm_bldg_1300687880",
+        "name": "Campus Facility 107",
+        "block_code": "F-7880",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.69903000000001,
+          31.2536582
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_1300687925_poi",
+        "building_id": "osm_bldg_1300687925",
+        "name": "Ssj Complex",
+        "block_code": "F-7925",
+        "category": "academic",
+        "description": "LPU Campus Facility: Ssj Complex",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.69973972,
+          31.2541135
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_1300687926_poi",
+        "building_id": "osm_bldg_1300687926",
+        "name": "dogra dhaba",
+        "block_code": "F-7926",
+        "category": "food",
+        "description": "LPU Campus Facility: dogra dhaba",
+        "icon": "food",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.69936036,
+          31.25392112
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_1300687927_poi",
+        "building_id": "osm_bldg_1300687927",
+        "name": "Lally apartment",
+        "block_code": "F-7927",
+        "category": "hostel",
+        "description": "LPU Campus Facility: Lally apartment",
+        "icon": "hostel",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.69941806,
+          31.25399852
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_1300687928_poi",
+        "building_id": "osm_bldg_1300687928",
+        "name": "Campus Facility 108",
+        "block_code": "F-7928",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.69929131666667,
+          31.254038366666666
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_1300687929_poi",
+        "building_id": "osm_bldg_1300687929",
+        "name": "Campus Facility 109",
+        "block_code": "F-7929",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.69950468,
+          31.25436946
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_1300687931_poi",
+        "building_id": "osm_bldg_1300687931",
+        "name": "Ten2Nine",
+        "block_code": "F-7931",
+        "category": "academic",
+        "description": "LPU Campus Facility: Ten2Nine",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.69920404,
+          31.254516360000004
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_1300687932_poi",
+        "building_id": "osm_bldg_1300687932",
+        "name": "Campus Facility 110",
+        "block_code": "F-7932",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.69803402,
+          31.253141640000003
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_1300700284_poi",
+        "building_id": "osm_bldg_1300700284",
+        "name": "Campus Facility 111",
+        "block_code": "F-0284",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.69801930000001,
+          31.253293660000004
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_1300700285_poi",
+        "building_id": "osm_bldg_1300700285",
+        "name": "Campus Facility 112",
+        "block_code": "F-0285",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.69802193999999,
+          31.253371379999997
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_1300700286_poi",
+        "building_id": "osm_bldg_1300700286",
+        "name": "Campus Facility 113",
+        "block_code": "F-0286",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.69921211428571,
+          31.25394398571429
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_1300700296_poi",
+        "building_id": "osm_bldg_1300700296",
+        "name": "Campus Facility 114",
+        "block_code": "F-0296",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.69908285555556,
+          31.254010777777783
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_1300700297_poi",
+        "building_id": "osm_bldg_1300700297",
+        "name": "Campus Facility 115",
+        "block_code": "F-0297",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.6991519,
+          31.254121140000002
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_1300700298_poi",
+        "building_id": "osm_bldg_1300700298",
+        "name": "Campus Facility 116",
+        "block_code": "F-0298",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.69904816,
+          31.25414344
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_1300700299_poi",
+        "building_id": "osm_bldg_1300700299",
+        "name": "Campus Facility 117",
+        "block_code": "F-0299",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.69888968000001,
+          31.254220299999997
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_1300700300_poi",
+        "building_id": "osm_bldg_1300700300",
+        "name": "Campus Facility 118",
+        "block_code": "F-0300",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.69960610000001,
+          31.254266480000002
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_1300700301_poi",
+        "building_id": "osm_bldg_1300700301",
+        "name": "Simar Land Promoters",
+        "block_code": "F-0301",
+        "category": "academic",
+        "description": "LPU Campus Facility: Simar Land Promoters",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.69941968,
+          31.25441386
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_1300700303_poi",
+        "building_id": "osm_bldg_1300700303",
+        "name": "Ghost Shooter",
+        "block_code": "F-0303",
+        "category": "academic",
+        "description": "LPU Campus Facility: Ghost Shooter",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.69933,
+          31.25446144
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_1300700304_poi",
+        "building_id": "osm_bldg_1300700304",
+        "name": "Campus Facility 119",
+        "block_code": "F-0304",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.69909498,
+          31.254574100000003
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_1300700305_poi",
+        "building_id": "osm_bldg_1300700305",
+        "name": "Campus Facility 120",
+        "block_code": "F-0305",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.69898928,
+          31.2546265
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_1300700306_poi",
+        "building_id": "osm_bldg_1300700306",
+        "name": "Majlis Restaurant",
+        "block_code": "F-0306",
+        "category": "food",
+        "description": "LPU Campus Facility: Majlis Restaurant",
+        "icon": "food",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.69808612,
+          31.254671960000003
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_1300700307_poi",
+        "building_id": "osm_bldg_1300700307",
+        "name": "Campus Facility 121",
+        "block_code": "F-0307",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.69820691666666,
+          31.25466855
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_1300700308_poi",
+        "building_id": "osm_bldg_1300700308",
+        "name": "Campus Facility 122",
+        "block_code": "F-0308",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.6982812,
+          31.25474166
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_1300700309_poi",
+        "building_id": "osm_bldg_1300700309",
+        "name": "Campus Facility 123",
+        "block_code": "F-0309",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.69811062,
+          31.25478628
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_1300700310_poi",
+        "building_id": "osm_bldg_1300700310",
+        "name": "Campus Facility 124",
+        "block_code": "F-0310",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.69864246,
+          31.25404408
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_1300700311_poi",
+        "building_id": "osm_bldg_1300700311",
+        "name": "Campus Facility 125",
+        "block_code": "F-0311",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.69870388,
+          31.2542847
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_1300700313_poi",
+        "building_id": "osm_bldg_1300700313",
+        "name": "Campus Facility 126",
+        "block_code": "F-0313",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.69861152000001,
+          31.254358860000004
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_1300700314_poi",
+        "building_id": "osm_bldg_1300700314",
+        "name": "Campus Facility 127",
+        "block_code": "F-0314",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.69829018,
+          31.25434176
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_1300700315_poi",
+        "building_id": "osm_bldg_1300700315",
+        "name": "Campus Facility 128",
+        "block_code": "F-0315",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.69831556,
+          31.25415152
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_1300700316_poi",
+        "building_id": "osm_bldg_1300700316",
+        "name": "Campus Facility 129",
+        "block_code": "F-0316",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.69809920000002,
+          31.25393495
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_1300700317_poi",
+        "building_id": "osm_bldg_1300700317",
+        "name": "Campus Facility 130",
+        "block_code": "F-0317",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.69810552,
+          31.25401652
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_1300700318_poi",
+        "building_id": "osm_bldg_1300700318",
+        "name": "Campus Facility 131",
+        "block_code": "F-0318",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.69802004,
+          31.254403680000003
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_1300700324_poi",
+        "building_id": "osm_bldg_1300700324",
+        "name": "Campus Facility 132",
+        "block_code": "F-0324",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.69804186,
+          31.24814286
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_1300762561_poi",
+        "building_id": "osm_bldg_1300762561",
+        "name": "Campus Facility 133",
+        "block_code": "F-2561",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.69828992000001,
+          31.2480793
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_1300762562_poi",
+        "building_id": "osm_bldg_1300762562",
+        "name": "Campus Facility 134",
+        "block_code": "F-2562",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.69801086,
+          31.24835434
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_1300762564_poi",
+        "building_id": "osm_bldg_1300762564",
+        "name": "Campus Facility 135",
+        "block_code": "F-2564",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.69826464,
+          31.253742340000002
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_1303020182_poi",
+        "building_id": "osm_bldg_1303020182",
+        "name": "Campus Facility 136",
+        "block_code": "F-0182",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.70183393333333,
+          31.252280299999995
+        ]
+      },
+      "properties": {
+        "id": "osm_bldg_1550425052_poi",
+        "building_id": "osm_bldg_1550425052",
+        "name": "Campus Facility 137",
+        "block_code": "F-5052",
+        "category": "academic",
+        "description": "University Academic & Operational Block",
+        "icon": "academic",
+        "is_highlight": false
+      }
+    }
+  ]
+}

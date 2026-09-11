@@ -2,8 +2,8 @@ import type { Metadata, Viewport } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'LPU 3D Campus Navigator',
-  description: 'Interactive 3D & 2D Hybrid University Navigator with Indoor Turn-by-Turn, Real-time GPS & Digital Campus ID',
+  title: 'LPU 3D GIS Digital Campus Navigator | Lovely Professional University',
+  description: 'Real-time 3D GIS campus digital twin with building extrusion, pedestrian & road routing, multi-floor indoor blueprints, distance measurement, and Gemini AI assistant.',
   manifest: '/manifest.json',
   icons: {
     icon: '/icon.svg',

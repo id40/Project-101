@@ -1,0 +1,838 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.7065,
+          31.2515
+        ]
+      },
+      "properties": {
+        "id": "gate-01_poi",
+        "name": "Main Gate 1 (GT Road / NH-44)",
+        "category": "gate",
+        "description": "Location: Main Gate 1 (GT Road / NH-44)",
+        "icon": "gate"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.7058,
+          31.252
+        ]
+      },
+      "properties": {
+        "id": "b-01_poi",
+        "name": "Block 1 - School of Fashion Design",
+        "category": "academic",
+        "description": "Location: Block 1 - School of Fashion Design",
+        "icon": "academic"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.7052,
+          31.2523
+        ]
+      },
+      "properties": {
+        "id": "b-02_poi",
+        "name": "Block 2 - Baldev Raj Mittal Auditorium",
+        "category": "auditorium",
+        "description": "Location: Block 2 - Baldev Raj Mittal Auditorium",
+        "icon": "auditorium"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.705,
+          31.2527
+        ]
+      },
+      "properties": {
+        "id": "b-03_poi",
+        "name": "Block 3 - Physiotherapy & Health Sciences",
+        "category": "academic",
+        "description": "Location: Block 3 - Physiotherapy & Health Sciences",
+        "icon": "academic"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.7046,
+          31.253
+        ]
+      },
+      "properties": {
+        "id": "b-04-07_poi",
+        "name": "Blocks 4 & 7 - Pharmaceutical Sciences",
+        "category": "academic",
+        "description": "Location: Blocks 4 & 7 - Pharmaceutical Sciences",
+        "icon": "academic"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.704,
+          31.2528
+        ]
+      },
+      "properties": {
+        "id": "b-06_poi",
+        "name": "Block 6 - Architecture & Design",
+        "category": "academic",
+        "description": "Location: Block 6 - Architecture & Design",
+        "icon": "academic"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.7043,
+          31.2525
+        ]
+      },
+      "properties": {
+        "id": "b-08_poi",
+        "name": "Block 8 - Animation & Fine Arts",
+        "category": "academic",
+        "description": "Location: Block 8 - Animation & Fine Arts",
+        "icon": "academic"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.7025,
+          31.2532
+        ]
+      },
+      "properties": {
+        "id": "b-13-14_poi",
+        "name": "Blocks 13 & 14 - Mittal School of Business",
+        "category": "academic",
+        "description": "Location: Blocks 13 & 14 - Mittal School of Business",
+        "icon": "academic"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.7032,
+          31.2533
+        ]
+      },
+      "properties": {
+        "id": "b-15-unimall_poi",
+        "name": "UniMall & Block 15",
+        "category": "shopping",
+        "description": "Location: UniMall & Block 15",
+        "icon": "shopping"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.7032,
+          31.2537
+        ]
+      },
+      "properties": {
+        "id": "unipolis_poi",
+        "name": "Unipolis Grand Amphitheatre",
+        "category": "auditorium",
+        "description": "Location: Unipolis Grand Amphitheatre",
+        "icon": "auditorium"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.7042,
+          31.2538
+        ]
+      },
+      "properties": {
+        "id": "b-18-20_poi",
+        "name": "Blocks 18 & 20 - School of Law & LIT Market",
+        "category": "academic",
+        "description": "Location: Blocks 18 & 20 - School of Law & LIT Market",
+        "icon": "academic"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.702,
+          31.2535
+        ]
+      },
+      "properties": {
+        "id": "b-25-28_poi",
+        "name": "Blocks 25-28 - Bioengineering & Agriculture",
+        "category": "academic",
+        "description": "Location: Blocks 25-28 - Bioengineering & Agriculture",
+        "icon": "academic"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.7013,
+          31.2536
+        ]
+      },
+      "properties": {
+        "id": "b-29-32_poi",
+        "name": "Blocks 29-32 - Central Administration",
+        "category": "administration",
+        "description": "Location: Blocks 29-32 - Central Administration",
+        "icon": "administration"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.7008,
+          31.2538
+        ]
+      },
+      "properties": {
+        "id": "b-33-34_poi",
+        "name": "Blocks 33 & 34 - Computer Science & Engineering",
+        "category": "academic",
+        "description": "Location: Blocks 33 & 34 - Computer Science & Engineering",
+        "icon": "academic"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.7004,
+          31.2541
+        ]
+      },
+      "properties": {
+        "id": "b-35_poi",
+        "name": "Block 35 - Shanti Devi Mittal Auditorium",
+        "category": "auditorium",
+        "description": "Location: Block 35 - Shanti Devi Mittal Auditorium",
+        "icon": "auditorium"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.701,
+          31.2543
+        ]
+      },
+      "properties": {
+        "id": "b-36-38_poi",
+        "name": "Blocks 36-38 - Central Library & Research",
+        "category": "library",
+        "description": "Location: Blocks 36-38 - Central Library & Research",
+        "icon": "library"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.7022,
+          31.2545
+        ]
+      },
+      "properties": {
+        "id": "b-47-indoor-stadium_poi",
+        "name": "Block 47 - Indoor Sports Stadium",
+        "category": "sports",
+        "description": "Location: Block 47 - Indoor Sports Stadium",
+        "icon": "sports"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.7033,
+          31.2546
+        ]
+      },
+      "properties": {
+        "id": "apartments-41-44_poi",
+        "name": "Apartments 41-44 Complex",
+        "category": "residential",
+        "description": "Location: Apartments 41-44 Complex",
+        "icon": "residential"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.7025,
+          31.2552
+        ]
+      },
+      "properties": {
+        "id": "bh-1-2_poi",
+        "name": "Boys Hostels BH-1 & BH-2",
+        "category": "hostel",
+        "description": "Location: Boys Hostels BH-1 & BH-2",
+        "icon": "hostel"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.7015,
+          31.2554
+        ]
+      },
+      "properties": {
+        "id": "bh-3-4_poi",
+        "name": "Boys Hostels BH-3 & BH-4",
+        "category": "hostel",
+        "description": "Location: Boys Hostels BH-3 & BH-4",
+        "icon": "hostel"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.7005,
+          31.2557
+        ]
+      },
+      "properties": {
+        "id": "bh-5-8_poi",
+        "name": "Boys Hostels BH-5 to BH-8",
+        "category": "hostel",
+        "description": "Location: Boys Hostels BH-5 to BH-8",
+        "icon": "hostel"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.699,
+          31.2551
+        ]
+      },
+      "properties": {
+        "id": "b-55-56_poi",
+        "name": "Blocks 55 & 56 - Heavy Engineering",
+        "category": "academic",
+        "description": "Location: Blocks 55 & 56 - Heavy Engineering",
+        "icon": "academic"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.6985,
+          31.2555
+        ]
+      },
+      "properties": {
+        "id": "b-57-58_poi",
+        "name": "Blocks 57 & 58 - Polytechnic & Student Labs",
+        "category": "academic",
+        "description": "Location: Blocks 57 & 58 - Polytechnic & Student Labs",
+        "icon": "academic"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.6998,
+          31.2546
+        ]
+      },
+      "properties": {
+        "id": "cricket-stadium_poi",
+        "name": "Cricket Stadium & Athletic Track",
+        "category": "sports",
+        "description": "Location: Cricket Stadium & Athletic Track",
+        "icon": "sports"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.7008,
+          31.2549
+        ]
+      },
+      "properties": {
+        "id": "olympic-pool_poi",
+        "name": "Olympic Swimming Pool Complex",
+        "category": "sports",
+        "description": "Location: Olympic Swimming Pool Complex",
+        "icon": "sports"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.7048,
+          31.2545
+        ]
+      },
+      "properties": {
+        "id": "uni-hospital_poi",
+        "name": "Uni-Hospital 24/7 Medical Center",
+        "category": "medical",
+        "description": "Location: Uni-Hospital 24/7 Medical Center",
+        "icon": "medical"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.7055,
+          31.2535
+        ]
+      },
+      "properties": {
+        "id": "gh-cluster_poi",
+        "name": "Girls Hostel Complex (GH 9-12, 21)",
+        "category": "hostel",
+        "description": "Location: Girls Hostel Complex (GH 9-12, 21)",
+        "icon": "hostel"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.7032,
+          31.2533
+        ]
+      },
+      "properties": {
+        "id": "poi-1",
+        "name": "UniMall Food Court",
+        "category": "food",
+        "description": "UniMall Food Court",
+        "icon": "food"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.704,
+          31.2528
+        ]
+      },
+      "properties": {
+        "id": "poi-2",
+        "name": "Block 6 Food Court",
+        "category": "food",
+        "description": "Block 6 Food Court",
+        "icon": "food"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.7015,
+          31.2554
+        ]
+      },
+      "properties": {
+        "id": "poi-3",
+        "name": "BH Food Square",
+        "category": "food",
+        "description": "BH Food Square",
+        "icon": "food"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.7042,
+          31.2538
+        ]
+      },
+      "properties": {
+        "id": "poi-4",
+        "name": "LIT Market",
+        "category": "shopping",
+        "description": "LIT Market",
+        "icon": "shopping"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.7033,
+          31.2533
+        ]
+      },
+      "properties": {
+        "id": "poi-5",
+        "name": "SBI ATM at UniMall",
+        "category": "atm",
+        "description": "SBI ATM at UniMall",
+        "icon": "atm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.7013,
+          31.2536
+        ]
+      },
+      "properties": {
+        "id": "poi-6",
+        "name": "HDFC ATM",
+        "category": "atm",
+        "description": "HDFC ATM",
+        "icon": "atm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.707,
+          31.252
+        ]
+      },
+      "properties": {
+        "id": "poi-7",
+        "name": "Main Parking",
+        "category": "parking",
+        "description": "Main Parking",
+        "icon": "parking"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.7005,
+          31.254
+        ]
+      },
+      "properties": {
+        "id": "poi-8",
+        "name": "Block 34 Parking",
+        "category": "parking",
+        "description": "Block 34 Parking",
+        "icon": "parking"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.702,
+          31.2542
+        ]
+      },
+      "properties": {
+        "id": "poi-9",
+        "name": "Urban Spido Park",
+        "category": "park",
+        "description": "Urban Spido Park",
+        "icon": "park"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.703,
+          31.2537
+        ]
+      },
+      "properties": {
+        "id": "poi-10",
+        "name": "Unipolis Garden",
+        "category": "park",
+        "description": "Unipolis Garden",
+        "icon": "park"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.7065,
+          31.2515
+        ]
+      },
+      "properties": {
+        "id": "poi-11",
+        "name": "Gate 1",
+        "category": "gate",
+        "description": "Gate 1",
+        "icon": "gate"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.708,
+          31.2505
+        ]
+      },
+      "properties": {
+        "id": "poi-12",
+        "name": "Gate 2",
+        "category": "gate",
+        "description": "Gate 2",
+        "icon": "gate"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [75.7008, 31.2538]
+      },
+      "properties": {
+        "id": "poi_apple_lab",
+        "name": "Apple iOS Developer Academy & Mac Lab",
+        "category": "academic",
+        "block_code": "B-34 Floor 2",
+        "description": "State-of-the-art iOS development center with 100+ iMac workstations and watchOS/visionOS test benches.",
+        "icon": "academic",
+        "is_highlight": true,
+        "badge": "Apple Certified Center"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [75.7009, 31.2539]
+      },
+      "properties": {
+        "id": "poi_nvidia_ai",
+        "name": "NVIDIA AI & Deep Learning Supercomputing Lab",
+        "category": "academic",
+        "block_code": "B-34 Floor 1",
+        "description": "Powered by NVIDIA DGX AI supercomputing infrastructure for LLM training and computer vision research.",
+        "icon": "academic",
+        "is_highlight": true,
+        "badge": "NVIDIA Teaching Center"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [75.7013, 31.2536]
+      },
+      "properties": {
+        "id": "poi_career_services",
+        "name": "Division of Career Services & Central Placements",
+        "category": "administration",
+        "block_code": "Block 32",
+        "description": "Headquarters where Google, Microsoft, Amazon, Cognizant conduct campus interview drives.",
+        "icon": "administration",
+        "is_highlight": true,
+        "badge": "Top Placement Center"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [75.6985, 31.2555]
+      },
+      "properties": {
+        "id": "poi_formula_student",
+        "name": "Formula Student Racecar Workshop & Aero Bay",
+        "category": "academic",
+        "block_code": "Block 57",
+        "description": "Student racing team fabrication lab, custom CNC machining, telemetry testing, and electric racecars.",
+        "icon": "sports",
+        "is_highlight": true,
+        "badge": "Formula Bharat Champions"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [75.7007, 31.2537]
+      },
+      "properties": {
+        "id": "poi_cisco_academy",
+        "name": "Cisco Networking & Cloud Security Academy",
+        "category": "academic",
+        "block_code": "B-33 Floor 3",
+        "description": "Enterprise CCNA/CCNP network racks, cyber warfare defense simulators, and cloud infrastructure.",
+        "icon": "academic",
+        "is_highlight": true,
+        "badge": "Cisco Regional Academy"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [75.7032, 31.2533]
+      },
+      "properties": {
+        "id": "poi_lovely_sweets",
+        "name": "Lovely Sweets Flagship & UniMall Central Atrium",
+        "category": "food",
+        "block_code": "UniMall Ground Floor",
+        "description": "Iconic authentic Punjabi sweets, rasgullas, dry fruits, chaat corner, and gifts inside UniMall.",
+        "icon": "food",
+        "is_highlight": true,
+        "badge": "LPU Flagship Store"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [75.7032, 31.2537]
+      },
+      "properties": {
+        "id": "poi_unipolis_grand",
+        "name": "Baldev Raj Mittal Unipolis Amphitheater",
+        "category": "auditorium",
+        "block_code": "Unipolis",
+        "description": "Asia's largest open-air covered university canopy, hosting 10,000+ students for One India and YouthVibe.",
+        "icon": "auditorium",
+        "is_highlight": true,
+        "badge": "Grand Amphitheater (10k+)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [75.7048, 31.2545]
+      },
+      "properties": {
+        "id": "poi_pulse_emergency",
+        "name": "Pulse 24/7 Emergency Casualty & Trauma Bay",
+        "category": "medical",
+        "block_code": "Uni-Hospital",
+        "description": "24/7 emergency physicians on duty, trauma resuscitation, ICU ambulances, and diagnostic pathology.",
+        "icon": "medical",
+        "is_highlight": true,
+        "badge": "24/7 Emergency Care"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [75.7008, 31.2549]
+      },
+      "properties": {
+        "id": "poi_olympic_diving",
+        "name": "Olympic 10-Lane 50m Swimming & Diving Arena",
+        "category": "sports",
+        "block_code": "Olympic Pool Complex",
+        "description": "World Aquatics certified 50m temperature-controlled competition pool with 10m Olympic diving towers.",
+        "icon": "sports",
+        "is_highlight": true,
+        "badge": "Olympic Standard"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [75.7025, 31.2532]
+      },
+      "properties": {
+        "id": "poi_startup_incubator",
+        "name": "LPU Start-Up Incubator & Venture Lab",
+        "category": "academic",
+        "block_code": "Block 13, MSB",
+        "description": "Government recognized startup accelerator with seed funding, mentoring, and 100+ student ventures.",
+        "icon": "academic",
+        "is_highlight": true,
+        "badge": "Govt Recognized Incubator"
+      }
+    }
+  ]
+}
