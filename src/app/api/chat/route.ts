@@ -51,7 +51,7 @@ INSTRUCTIONS:
 - You must always respond with a valid JSON object matching this schema:
   {
     "reply": "string (polite, informative answer with markdown formatting like bold text and bullet points)",
-    "actionLocationId": "string or null (one of: 'gate-01', 'unipolis', 'b-15-unimall', 'b-33-34', 'b-36-38', 'cricket-stadium', 'pool', 'bh-1-2', 'gh-cluster', 'uni-hospital', 'b-01', 'b-03', 'b-04-07', 'b-06', 'b-08', 'b-13-14', 'b-18-20', 'b-25-28', 'b-29-32', 'b-35', 'b-55-56')",
+    "actionLocationId": "string or null (one of: 'gate-01', 'unipolis', 'b-15-unimall', 'b-33-34', 'b-36-38', 'cricket-stadium', 'olympic-pool', 'bh-1-2', 'gh-cluster', 'uni-hospital', 'b-01', 'b-03', 'b-04-07', 'b-06', 'b-08', 'b-13-14', 'b-18-20', 'b-25-28', 'b-29-32', 'b-35', 'b-55-56')",
     "actionType": "string or null ('navigate' | 'indoor' | 'focus')",
     "quickReplies": ["string (2 to 4 contextual follow-up prompt suggestions)"]
   }

@@ -256,5 +256,7 @@ export const IndoorModal: React.FC<IndoorModalProps> = ({ buildingId, onClose })
 function fName(floor: number) {
   if (floor === 0) return 'Ground';
   if (floor === 1) return '1st Floor';
-  return `${floor}nd Floor`;
+  if (floor === 2) return '2nd Floor';
+  if (floor === 3) return '3rd Floor';
+  return `${floor}th Floor`;
 }

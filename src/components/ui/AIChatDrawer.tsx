@@ -30,8 +30,8 @@ export const AIChatDrawer: React.FC<AIChatDrawerProps> = ({
   const [messages, setMessages] = useState<Message[]>([
     {
       role: 'assistant',
-      text: "👋 **Hello! I'm your LPU Campus Assistant powered by Google Gemini.**\nAsk me about any academic block, classroom, food court, hostel curfew, salon services, or emergency help!",
-      poweredBy: 'gemini-2.5-flash',
+      text: "👋 **Hello! I'm your LPU Campus Assistant powered by Google Gemini.**\nAsk me about any academic block, classroom, food court, hostel curfew, shopping, or emergency help!",
+      poweredBy: 'gemini-3.6-flash',
     },
   ]);
   const [input, setInput] = useState('');
@@ -180,7 +180,7 @@ export const AIChatDrawer: React.FC<AIChatDrawerProps> = ({
                   {m.role === 'assistant' && (
                     <div className="mt-2 text-[9px] text-slate-400 flex items-center gap-1">
                       <Sparkles className="w-2.5 h-2.5 text-cyan-400" />
-                      <span>{m.poweredBy === 'gemini-2.5-flash' ? 'Google Gemini 2.5 Flash' : 'LPU Verified Knowledge Engine'}</span>
+                      <span>{m.poweredBy?.startsWith('gemini') ? 'Google Gemini AI' : 'LPU Verified Knowledge Engine'}</span>
                     </div>
                   )}
 
@@ -255,7 +255,7 @@ export const AIChatDrawer: React.FC<AIChatDrawerProps> = ({
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder="Ask about blocks, curfew, salon, meals, fees..."
+              placeholder="Ask about blocks, curfew, food, library, sports..."
               className="flex-1 bg-transparent text-xs text-white px-3 py-1.5 focus:outline-none placeholder-slate-500"
             />
             <button

@@ -55,7 +55,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
             setQuery(e.target.value);
             setIsOpen(true);
           }}
-          placeholder="Where do you want to go? (e.g. 34, Salon, Library)"
+          placeholder="Where do you want to go? (e.g. Block 34, UniMall, Library)"
           className="w-full bg-transparent text-xs text-white placeholder-slate-400 focus:outline-none"
         />
         {query && (

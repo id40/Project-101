@@ -26,6 +26,7 @@ const TIER1_LANDMARKS = new Set([
   'b-33-34',
   'b-36-38',
   'cricket-stadium',
+  'olympic-pool',
   'bh-1-2',
   'gh-cluster',
   'uni-hospital'
@@ -409,9 +410,9 @@ export const Campus3DScene: React.FC<Campus3DSceneProps> = ({
 
       {/* 4. Olympic Swimming Pool Complex */}
       {(() => {
-        const loc = locMap.get('pool');
-        const isSelected = selectedLocation?.id === 'pool';
-        const isHovered = hoveredId === 'pool';
+        const loc = locMap.get('olympic-pool');
+        const isSelected = selectedLocation?.id === 'olympic-pool';
+        const isHovered = hoveredId === 'olympic-pool';
 
         return (
           <group
@@ -422,7 +423,7 @@ export const Campus3DScene: React.FC<Campus3DSceneProps> = ({
             }}
             onPointerOver={(e) => {
               e.stopPropagation();
-              setHoveredId('pool');
+              setHoveredId('olympic-pool');
               document.body.style.cursor = 'pointer';
             }}
             onPointerOut={() => {
@@ -447,7 +448,7 @@ export const Campus3DScene: React.FC<Campus3DSceneProps> = ({
             </mesh>
 
             {/* Landmark Label */}
-            {(isSelected || isHovered || TIER1_LANDMARKS.has('pool')) && (
+            {(isSelected || isHovered || TIER1_LANDMARKS.has('olympic-pool')) && (
               <Html position={[0, 8, 0]} center distanceFactor={170}>
                 <div
                   className={`px-3 py-1 rounded-full text-xs font-black shadow-2xl transition-all duration-200 pointer-events-none select-none flex items-center gap-1.5 border ${
@@ -471,7 +472,7 @@ export const Campus3DScene: React.FC<Campus3DSceneProps> = ({
       {/* ========================================= */}
       {locations.map((loc) => {
         // Skip custom procedural landmarks to prevent double-mesh clashing
-        if (['gate-01', 'unipolis', 'cricket-stadium', 'pool'].includes(loc.id)) {
+        if (['gate-01', 'unipolis', 'cricket-stadium', 'olympic-pool'].includes(loc.id)) {
           return null;
         }
 

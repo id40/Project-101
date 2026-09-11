@@ -63,7 +63,7 @@ export const Campus2DView: React.FC<Campus2DViewProps> = ({
     if (activeFilter === 'academic') return loc.type === 'academic' || loc.type === 'auditorium';
     if (activeFilter === 'hostel') return loc.type === 'hostel';
     if (activeFilter === 'food') return loc.type === 'food';
-    if (activeFilter === 'sports') return loc.type === 'sports' || loc.id === 'cricket-stadium' || loc.id === 'pool';
+    if (activeFilter === 'sports') return loc.type === 'sports' || loc.id === 'cricket-stadium' || loc.id === 'olympic-pool';
     return true;
   });
 
