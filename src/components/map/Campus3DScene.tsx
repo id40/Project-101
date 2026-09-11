@@ -16,6 +16,7 @@ interface Campus3DSceneProps {
   isMoving: boolean;
   avatarConfig: AvatarConfig;
   activeRoute: NavigationRoute | null;
+  cameraMode?: 'orbit' | 'street';
 }
 
 // Major landmarks that get minimalist tier-1 pin labels
@@ -41,6 +42,7 @@ export const Campus3DScene: React.FC<Campus3DSceneProps> = ({
   isMoving,
   avatarConfig,
   activeRoute,
+  cameraMode = 'orbit',
 }) => {
   const [hoveredId, setHoveredId] = useState<string | null>(null);
 
@@ -647,12 +649,13 @@ export const Campus3DScene: React.FC<Campus3DSceneProps> = ({
         </group>
       )}
 
-      {/* 3D Character Avatar (Boy or Girl) */}
+      {/* 3D Character Avatar (3D Guy for Boy or Stylized Girl) */}
       <CampusAvatar3D
         position={avatarPosition}
         heading={avatarHeading}
         isMoving={isMoving}
         config={avatarConfig}
+        isStreetView={cameraMode === 'street'}
       />
     </group>
   );

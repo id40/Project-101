@@ -13,20 +13,44 @@ interface CameraControllerProps {
   targetLocation: CampusLocation | null;
   recenterTrigger: number;
   avatarPosition: [number, number, number];
+  avatarHeading: number;
+  cameraMode: 'orbit' | 'street';
 }
 
-function CameraController({ targetLocation, recenterTrigger, avatarPosition }: CameraControllerProps) {
+function CameraController({
+  targetLocation,
+  recenterTrigger,
+  avatarPosition,
+  avatarHeading,
+  cameraMode,
+}: CameraControllerProps) {
   const { camera } = useThree();
   const controlsRef = useRef<OrbitControlsType>(null);
   const isTransitioning = useRef<boolean>(false);
+  const isUserInteracting = useRef<boolean>(false);
 
-  // Smooth camera target positions
+  // Smooth camera target positions for Orbit mode
   const desiredTarget = useRef<THREE.Vector3>(new THREE.Vector3(avatarPosition[0], 0, avatarPosition[2]));
   const desiredCamPos = useRef<THREE.Vector3>(new THREE.Vector3(avatarPosition[0] + 35, 45, avatarPosition[2] + 45));
 
-  // Focus on selected location with smooth transition
+  // Switch to Street View Chase Cam
   useEffect(() => {
-    if (targetLocation && controlsRef.current) {
+    if (cameraMode === 'street') {
+      isUserInteracting.current = false;
+      isTransitioning.current = true;
+    } else {
+      // Switched back to drone/orbit: smoothly lift camera to overhead view
+      if (controlsRef.current) {
+        desiredTarget.current.set(avatarPosition[0], 0, avatarPosition[2]);
+        desiredCamPos.current.set(avatarPosition[0] + 30, 45, avatarPosition[2] + 40);
+        isTransitioning.current = true;
+      }
+    }
+  }, [cameraMode, avatarPosition]);
+
+  // Focus on selected location with smooth transition in orbit mode
+  useEffect(() => {
+    if (targetLocation && controlsRef.current && cameraMode === 'orbit') {
       desiredTarget.current.set(targetLocation.map_x, 0, targetLocation.map_z);
       desiredCamPos.current.set(
         targetLocation.map_x + 35,
@@ -35,43 +59,82 @@ function CameraController({ targetLocation, recenterTrigger, avatarPosition }: C
       );
       isTransitioning.current = true;
     }
-  }, [targetLocation]);
+  }, [targetLocation, cameraMode]);
 
   // Recenter camera on Avatar
   useEffect(() => {
     if (recenterTrigger > 0 && controlsRef.current) {
-      desiredTarget.current.set(avatarPosition[0], 0, avatarPosition[2]);
-      desiredCamPos.current.set(avatarPosition[0] + 30, 35, avatarPosition[2] + 35);
-      isTransitioning.current = true;
+      if (cameraMode === 'street') {
+        isUserInteracting.current = false;
+      } else {
+        desiredTarget.current.set(avatarPosition[0], 0, avatarPosition[2]);
+        desiredCamPos.current.set(avatarPosition[0] + 30, 35, avatarPosition[2] + 35);
+        isTransitioning.current = true;
+      }
     }
-  }, [recenterTrigger, avatarPosition]);
+  }, [recenterTrigger, avatarPosition, cameraMode]);
 
-  // When user interacts with OrbitControls (drags, rotates, pans, zooms), immediately yield control to user!
+  // User interaction detection: let user orbit freely around avatar or campus
   useEffect(() => {
     const controls = controlsRef.current;
     if (!controls) return;
     const handleStart = () => {
       isTransitioning.current = false;
+      isUserInteracting.current = true;
+    };
+    const handleEnd = () => {
+      if (cameraMode === 'street') {
+        // In street view, smoothly resume follow-cam tracking after user finishes looking around
+        setTimeout(() => {
+          isUserInteracting.current = false;
+        }, 1500);
+      }
     };
     controls.addEventListener('start', handleStart);
+    controls.addEventListener('end', handleEnd);
     return () => {
       controls.removeEventListener('start', handleStart);
+      controls.removeEventListener('end', handleEnd);
     };
-  }, []);
+  }, [cameraMode]);
 
-  // Frame update: only lerp camera during active transitions
+  // Frame update
   useFrame((_, delta) => {
     if (!controlsRef.current) return;
 
-    if (isTransitioning.current) {
-      const lerpSpeed = Math.min(1, delta * 3.5);
-      controlsRef.current.target.lerp(desiredTarget.current, lerpSpeed);
-      camera.position.lerp(desiredCamPos.current, lerpSpeed);
+    if (cameraMode === 'street') {
+      // Pokemon Go style 3rd-person follow cam
+      const chaseDist = 8.5;
+      const chaseHeight = 3.8;
 
-      const distCam = camera.position.distanceTo(desiredCamPos.current);
-      const distTarget = controlsRef.current.target.distanceTo(desiredTarget.current);
-      if (distCam < 0.25 && distTarget < 0.25) {
-        isTransitioning.current = false;
+      const targetX = avatarPosition[0] + Math.sin(avatarHeading) * 3.5;
+      const targetY = avatarPosition[1] + 1.8;
+      const targetZ = avatarPosition[2] + Math.cos(avatarHeading) * 3.5;
+
+      const camX = avatarPosition[0] - Math.sin(avatarHeading) * chaseDist;
+      const camY = avatarPosition[1] + chaseHeight;
+      const camZ = avatarPosition[2] - Math.cos(avatarHeading) * chaseDist;
+
+      if (!isUserInteracting.current) {
+        const followSpeed = Math.min(1, delta * 5.0);
+        camera.position.lerp(new THREE.Vector3(camX, camY, camZ), followSpeed);
+        controlsRef.current.target.lerp(new THREE.Vector3(targetX, targetY, targetZ), followSpeed);
+      } else {
+        // While user is manual orbiting around avatar in Street View, center orbit on avatar
+        controlsRef.current.target.set(avatarPosition[0], avatarPosition[1] + 1.8, avatarPosition[2]);
+      }
+    } else {
+      // Birds-Eye Drone Orbit Mode
+      if (isTransitioning.current) {
+        const lerpSpeed = Math.min(1, delta * 3.5);
+        controlsRef.current.target.lerp(desiredTarget.current, lerpSpeed);
+        camera.position.lerp(desiredCamPos.current, lerpSpeed);
+
+        const distCam = camera.position.distanceTo(desiredCamPos.current);
+        const distTarget = controlsRef.current.target.distanceTo(desiredTarget.current);
+        if (distCam < 0.25 && distTarget < 0.25) {
+          isTransitioning.current = false;
+        }
       }
     }
 
@@ -85,12 +148,12 @@ function CameraController({ targetLocation, recenterTrigger, avatarPosition }: C
       dampingFactor={0.06}
       rotateSpeed={0.85}
       zoomSpeed={1.2}
-      panSpeed={0.8}
+      panSpeed={cameraMode === 'orbit' ? 0.8 : 0.2}
       screenSpacePanning={true}
       maxPolarAngle={Math.PI / 2.05}
-      minPolarAngle={0.05}
-      minDistance={8}
-      maxDistance={500}
+      minPolarAngle={cameraMode === 'street' ? 0.15 : 0.05}
+      minDistance={cameraMode === 'street' ? 4 : 8}
+      maxDistance={cameraMode === 'street' ? 25 : 500}
     />
   );
 }
@@ -105,9 +168,12 @@ interface CampusCanvasProps {
   avatarConfig: AvatarConfig;
   activeRoute: NavigationRoute | null;
   recenterTrigger: number;
+  cameraMode?: 'orbit' | 'street';
 }
 
 export const CampusCanvas: React.FC<CampusCanvasProps> = (props) => {
+  const mode = props.cameraMode || 'orbit';
+
   return (
     <div className="w-full h-full relative select-none">
       <Canvas
@@ -138,9 +204,11 @@ export const CampusCanvas: React.FC<CampusCanvasProps> = (props) => {
           targetLocation={props.selectedLocation}
           recenterTrigger={props.recenterTrigger}
           avatarPosition={props.avatarPosition}
+          avatarHeading={props.avatarHeading}
+          cameraMode={mode}
         />
 
-        <Campus3DScene {...props} />
+        <Campus3DScene {...props} cameraMode={mode} />
       </Canvas>
     </div>
   );

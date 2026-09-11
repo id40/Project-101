@@ -24,11 +24,14 @@ import { StudentProfileDrawer } from '@/components/profile/StudentProfileDrawer'
 import { VendorSheet } from '@/components/ui/VendorSheet';
 import { AIChatDrawer } from '@/components/ui/AIChatDrawer';
 import { VirtualJoystick } from '@/components/ui/VirtualJoystick';
-import { Layers, Crosshair, User, X, Navigation, Compass, MapPin } from 'lucide-react';
+import { Layers, Crosshair, User, X, Navigation, Compass, MapPin, Play, Pause } from 'lucide-react';
 
 export default function CampusNavigatorPage() {
-  // View mode: 3D or 2D
+  // View mode: 3D or 2D & Camera Perspective (Orbit / Street)
   const [viewMode, setViewMode] = useState<'3d' | '2d'>('3d');
+  const [cameraMode, setCameraMode] = useState<'orbit' | 'street'>('orbit');
+  const [isWalkingRoute, setIsWalkingRoute] = useState<boolean>(false);
+  const walkingIndex = useRef<number>(0);
   const [currentTab, setCurrentTab] = useState<NavTab>('explore');
 
   // Locations & Selection
@@ -219,7 +222,43 @@ export default function CampusNavigatorPage() {
     };
   }, [isSimulating]);
 
-  // Navigate to building via Dijkstra
+  // Turn-by-Turn Route Walking Animator (Street View follow)
+  useEffect(() => {
+    let timer: NodeJS.Timeout | null = null;
+    if (isWalkingRoute && activeRoute && activeRoute.coordinates.length > 1) {
+      const coords = activeRoute.coordinates;
+      walkingIndex.current = 0;
+
+      timer = setInterval(() => {
+        walkingIndex.current += 1;
+        if (walkingIndex.current >= coords.length) {
+          setIsWalkingRoute(false);
+          setIsMoving(false);
+          return;
+        }
+
+        const target = coords[walkingIndex.current];
+        setAvatarPosition(([px, , pz]) => {
+          const dx = target[0] - px;
+          const dz = target[2] - pz;
+          if (Math.hypot(dx, dz) > 0.05) {
+            const angle = Math.atan2(dx, dz);
+            setAvatarHeading(angle);
+          }
+          setIsMoving(true);
+          return [target[0], 0, target[2]];
+        });
+      }, 1000);
+    } else {
+      setIsMoving(false);
+    }
+
+    return () => {
+      if (timer) clearInterval(timer);
+    };
+  }, [isWalkingRoute, activeRoute]);
+
+  // Navigate to building via Dijkstra & auto-enter Street View
   const handleNavigateToLocation = (loc: CampusLocation) => {
     setSelectedLocation(loc);
     const startNode = findNearestNode(avatarPosition[0], avatarPosition[2]);
@@ -233,9 +272,12 @@ export default function CampusNavigatorPage() {
     );
 
     setActiveRoute(route);
+    // Switch to Street View Pokemon Go mode!
+    setCameraMode('street');
+    setViewMode('3d');
   };
 
-  // Navigate to Vendor
+  // Navigate to Vendor & auto-enter Street View
   const handleNavigateToVendor = (ven: Vendor) => {
     const parentLoc = LPU_LOCATIONS.find((l) => l.id === ven.location_id) || LPU_LOCATIONS[0];
     setSelectedLocation(parentLoc);
@@ -250,6 +292,9 @@ export default function CampusNavigatorPage() {
     );
 
     setActiveRoute(route);
+    // Switch to Street View Pokemon Go mode!
+    setCameraMode('street');
+    setViewMode('3d');
   };
 
   const handleUpdateAvatar = (newConfig: AvatarConfig) => {
@@ -279,6 +324,27 @@ export default function CampusNavigatorPage() {
         />
 
         <div className="flex items-center gap-1.5 shrink-0">
+          {viewMode === '3d' && (
+            <button
+              onClick={() => setCameraMode((m) => (m === 'street' ? 'orbit' : 'street'))}
+              className={`flex items-center gap-1.5 px-3 py-2 rounded-2xl text-xs font-bold border shadow-xl transition-all ${
+                cameraMode === 'street'
+                  ? 'bg-gradient-to-r from-[#06B6D4] to-[#635BFF] text-white border-cyan-400 shadow-cyan-500/30'
+                  : 'bg-slate-900/90 text-slate-300 border-slate-700 hover:text-white'
+              }`}
+              title="Toggle Street View Follow Cam (Pokemon Go Mode)"
+            >
+              {cameraMode === 'street' ? (
+                <>
+                  <span className="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+                  <span>Street View</span>
+                </>
+              ) : (
+                <span>🌐 Drone View</span>
+              )}
+            </button>
+          )}
+
           <button
             onClick={() => setViewMode((m) => (m === '3d' ? '2d' : '3d'))}
             className={`flex items-center gap-1 px-3 py-2 rounded-2xl text-xs font-bold border shadow-xl transition-all ${
@@ -288,7 +354,7 @@ export default function CampusNavigatorPage() {
             }`}
           >
             <Layers className="w-3.5 h-3.5" />
-            <span>{viewMode === '3d' ? '3D View' : '2D Map'}</span>
+            <span>{viewMode === '3d' ? '3D' : '2D'}</span>
           </button>
 
           <button
@@ -348,6 +414,7 @@ export default function CampusNavigatorPage() {
             avatarConfig={profile.avatar}
             activeRoute={activeRoute}
             recenterTrigger={recenterTrigger}
+            cameraMode={cameraMode}
           />
         ) : (
           <Campus2DView
@@ -365,33 +432,78 @@ export default function CampusNavigatorPage() {
       {/* Active Navigation HUD Banner */}
       {activeRoute && (
         <div className="absolute top-28 left-3 right-3 z-30 max-w-md mx-auto pointer-events-auto animate-in slide-in-from-top duration-300">
-          <div className="bg-[#090D16]/95 backdrop-blur-xl border border-[#635BFF]/60 rounded-3xl p-3.5 text-white shadow-2xl flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-[#635BFF] to-[#38BDF8] flex items-center justify-center text-white shadow-lg shadow-[#635BFF]/30 shrink-0">
-                <Navigation className="w-5 h-5 animate-pulse" />
-              </div>
-              <div>
-                <div className="flex items-center gap-1.5">
-                  <span className="text-[10px] bg-cyan-950/80 text-cyan-300 border border-cyan-800/60 font-bold px-1.5 py-0.2 rounded">
-                    OUTDOOR ROUTE
-                  </span>
-                  <h4 className="text-xs font-bold text-white leading-tight truncate max-w-[180px]">
-                    {activeRoute.destination_name}
-                  </h4>
+          <div className="bg-[#090D16]/95 backdrop-blur-xl border border-[#635BFF]/60 rounded-3xl p-3.5 text-white shadow-2xl">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-[#635BFF] to-[#38BDF8] flex items-center justify-center text-white shadow-lg shadow-[#635BFF]/30 shrink-0">
+                  <Navigation className="w-5 h-5 animate-pulse" />
                 </div>
-                <p className="text-[11px] text-slate-300 mt-0.5">
-                  <strong className="text-cyan-300">{activeRoute.total_distance}m</strong> distance • ~
-                  <strong className="text-emerald-400">{activeRoute.estimated_time_min} min</strong> walk
-                </p>
+                <div>
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-[10px] bg-cyan-950/80 text-cyan-300 border border-cyan-800/60 font-bold px-1.5 py-0.2 rounded">
+                      OUTDOOR ROUTE
+                    </span>
+                    <h4 className="text-xs font-bold text-white leading-tight truncate max-w-[180px]">
+                      {activeRoute.destination_name}
+                    </h4>
+                  </div>
+                  <p className="text-[11px] text-slate-300 mt-0.5">
+                    <strong className="text-cyan-300">{activeRoute.total_distance}m</strong> distance • ~
+                    <strong className="text-emerald-400">{activeRoute.estimated_time_min} min</strong> walk
+                  </p>
+                </div>
               </div>
+
+              <button
+                onClick={() => {
+                  setActiveRoute(null);
+                  setIsWalkingRoute(false);
+                  setCameraMode('orbit');
+                }}
+                className="w-8 h-8 rounded-full bg-slate-800/80 hover:bg-slate-700 text-slate-400 hover:text-white flex items-center justify-center transition-colors"
+              >
+                <X className="w-4 h-4" />
+              </button>
             </div>
 
-            <button
-              onClick={() => setActiveRoute(null)}
-              className="w-8 h-8 rounded-full bg-slate-800/80 hover:bg-slate-700 text-slate-400 hover:text-white flex items-center justify-center transition-colors"
-            >
-              <X className="w-4 h-4" />
-            </button>
+            {/* Street View Route Walker Controls */}
+            <div className="flex items-center gap-2 mt-3 pt-2.5 border-t border-slate-800/80">
+              <button
+                onClick={() => {
+                  setCameraMode('street');
+                  setViewMode('3d');
+                  setIsWalkingRoute((w) => !w);
+                }}
+                className={`flex-1 py-1.5 px-3 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-all shadow-md ${
+                  isWalkingRoute
+                    ? 'bg-amber-500 text-slate-950 shadow-amber-500/40 animate-pulse'
+                    : 'bg-gradient-to-r from-[#635BFF] to-[#4F46E5] hover:from-[#5248E5] hover:to-[#4338CA] text-white shadow-[#635BFF]/30'
+                }`}
+              >
+                {isWalkingRoute ? (
+                  <>
+                    <Pause className="w-3.5 h-3.5" />
+                    <span>Pause Walking</span>
+                  </>
+                ) : (
+                  <>
+                    <Play className="w-3.5 h-3.5" />
+                    <span>Walk Along Path (Street View)</span>
+                  </>
+                )}
+              </button>
+
+              <button
+                onClick={() => setCameraMode((m) => (m === 'street' ? 'orbit' : 'street'))}
+                className={`py-1.5 px-3 rounded-xl text-xs font-bold border transition-all ${
+                  cameraMode === 'street'
+                    ? 'bg-cyan-950/90 text-cyan-300 border-cyan-500/60 shadow-sm'
+                    : 'bg-slate-800 text-slate-300 border-slate-700'
+                }`}
+              >
+                {cameraMode === 'street' ? '🚶 Street Cam' : '🌐 Drone Cam'}
+              </button>
+            </div>
           </div>
         </div>
       )}
