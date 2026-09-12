@@ -10,6 +10,7 @@ import MapLayersPanel from '@/components/ui/MapLayersPanel';
 import { AIChatDrawer } from '@/components/ui/AIChatDrawer';
 import { CampusIDCardModal } from '@/components/profile/CampusIDCardModal';
 import { StudentProfileDrawer } from '@/components/profile/StudentProfileDrawer';
+import { StudentAuthModal } from '@/components/profile/StudentAuthModal';
 import { IndoorModal } from '@/components/indoor/IndoorModal';
 import { VendorSheet } from '@/components/ui/VendorSheet';
 import { UniMallBookingModal } from '@/components/unimall/UniMallBookingModal';
@@ -99,6 +100,8 @@ export default function CampusPage() {
   const [isAROpen, setIsAROpen] = useState(false);
   const [isShuttleOpen, setIsShuttleOpen] = useState(false);
   const [isHeatmapOpen, setIsHeatmapOpen] = useState(false);
+  const [isAuthOpen, setIsAuthOpen] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   // Audio Voice Guidance Hook
   const { speak, supported: isVoiceSupported, isMuted: isVoiceMuted, toggleMute: toggleVoiceMute } = useCampusVoice();
@@ -202,6 +205,19 @@ export default function CampusPage() {
       },
     ],
   });
+
+  // Check local secure vault session on initial load
+  React.useEffect(() => {
+    fetch('/api/auth/me')
+      .then(res => res.json())
+      .then(data => {
+        if (data.authenticated && data.profile) {
+          setProfile(data.profile);
+          setIsAuthenticated(true);
+        }
+      })
+      .catch(() => {});
+  }, []);
 
   // Helper to map building id/alias to indoor data keys
   const resolveIndoorId = useCallback((id: string): string | null => {
@@ -593,17 +609,35 @@ export default function CampusPage() {
 
           {/* Student ID & Profile */}
           <button
-            onClick={() => setIsIDCardOpen(true)}
-            className="hidden sm:flex items-center gap-1.5 px-2 py-1.5 rounded-lg bg-slate-900 border border-white/10 hover:border-orange-500/50 text-white text-xs font-semibold shadow-md transition-all active:scale-95"
-            title="Digital Student ID Card"
+            onClick={() => {
+              if (isAuthenticated) {
+                setIsIDCardOpen(true);
+              } else {
+                setIsAuthOpen(true);
+              }
+            }}
+            className={`hidden sm:flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border text-xs font-semibold shadow-md transition-all active:scale-95 ${
+              isAuthenticated
+                ? 'bg-slate-900 border-emerald-500/40 text-white hover:border-emerald-500/70'
+                : 'bg-[#ff5e1e]/15 border-[#ff5e1e]/40 text-[#ffb59d] hover:bg-[#ff5e1e]/25'
+            }`}
+            title={isAuthenticated ? `Signed In: ${profile.registrationNumber}` : 'Student Security Login'}
           >
-            <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-            <span className="font-mono text-[11px]">12204589</span>
+            <div className={`w-1.5 h-1.5 rounded-full ${isAuthenticated ? 'bg-emerald-400 animate-pulse' : 'bg-amber-400'}`} />
+            <span className="font-mono text-[11px]">
+              {isAuthenticated ? profile.registrationNumber : 'Sign In'}
+            </span>
           </button>
           <button
-            onClick={() => setIsProfileOpen(true)}
+            onClick={() => {
+              if (isAuthenticated) {
+                setIsProfileOpen(true);
+              } else {
+                setIsAuthOpen(true);
+              }
+            }}
             className="p-1.5 rounded-lg bg-slate-900 border border-white/10 hover:border-white/20 text-white shadow-md transition-all active:scale-95"
-            title="Student Profile & Schedule"
+            title={isAuthenticated ? 'Student Profile & Timetable' : 'Sign In'}
           >
             <User size={15} />
           </button>
@@ -1135,6 +1169,11 @@ export default function CampusPage() {
           profile={profile}
           onUpdateAvatar={(newAvatar: AvatarConfig) => {
             setProfile(p => ({ ...p, avatar: newAvatar }));
+            fetch('/api/student/profile', {
+              method: 'PUT',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ avatar: newAvatar }),
+            }).catch(() => {});
           }}
           onNavigateToBuilding={(buildingId: string) => {
             const loc = LPU_LOCATIONS.find(l => l.id === buildingId);
@@ -1148,9 +1187,26 @@ export default function CampusPage() {
             setIsProfileOpen(false);
             setIsIDCardOpen(true);
           }}
+          onLogout={async () => {
+            try {
+              await fetch('/api/auth/logout', { method: 'POST' });
+            } catch {}
+            setIsAuthenticated(false);
+            setIsProfileOpen(false);
+          }}
           onClose={() => setIsProfileOpen(false)}
         />
       )}
+
+      {/* Secure Student Authentication Modal (Local SQLite Vault) */}
+      <StudentAuthModal
+        isOpen={isAuthOpen}
+        onClose={() => setIsAuthOpen(false)}
+        onLoginSuccess={(newProfile) => {
+          setProfile(newProfile);
+          setIsAuthenticated(true);
+        }}
+      />
 
       {/* Campus Vendors Drawer */}
       {isVendorSheetOpen && (

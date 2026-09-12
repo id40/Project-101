@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { StudentProfile, AvatarConfig } from '@/types/profile';
-import { X, User, Calendar, CheckCircle2, Navigation, Palette, Award } from 'lucide-react';
+import { X, User, Calendar, CheckCircle2, Navigation, Palette, Award, LogOut } from 'lucide-react';
 
 interface StudentProfileDrawerProps {
   profile: StudentProfile;
@@ -10,6 +10,7 @@ interface StudentProfileDrawerProps {
   onNavigateToBuilding: (buildingId: string) => void;
   onOpenIDCard: () => void;
   onClose: () => void;
+  onLogout?: () => void;
 }
 
 export const StudentProfileDrawer: React.FC<StudentProfileDrawerProps> = ({
@@ -18,6 +19,7 @@ export const StudentProfileDrawer: React.FC<StudentProfileDrawerProps> = ({
   onNavigateToBuilding,
   onOpenIDCard,
   onClose,
+  onLogout,
 }) => {
   const colorOptions = [
     { name: 'Electric Indigo', hex: '#635BFF' },
@@ -177,6 +179,17 @@ export const StudentProfileDrawer: React.FC<StudentProfileDrawerProps> = ({
               ))}
             </div>
           </div>
+
+          {/* Secure Logout CTA */}
+          {onLogout && (
+            <button
+              onClick={onLogout}
+              className="w-full py-2.5 rounded-xl bg-red-500/10 hover:bg-red-500/20 text-red-400 hover:text-red-300 border border-red-500/20 text-xs font-semibold flex items-center justify-center gap-2 transition-colors mt-2"
+            >
+              <LogOut className="w-3.5 h-3.5" />
+              <span>Log Out of Student Vault</span>
+            </button>
+          )}
         </div>
       </div>
     </div>
