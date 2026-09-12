@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { X, Sparkles, Send, Bot, User, MapPin, Navigation, Layers, Cpu } from 'lucide-react';
 import { CampusLocation } from '@/types/campus';
 
@@ -30,7 +31,7 @@ export const AIChatDrawer: React.FC<AIChatDrawerProps> = ({
   const [messages, setMessages] = useState<Message[]>([
     {
       role: 'assistant',
-      text: "👋 **Hello! I'm your LPU Campus Assistant powered by Google Gemini.**\nAsk me about any academic block, classroom, food court, hostel curfew, shopping, or emergency help!",
+      text: "👋 **Hello! I'm your NAVIA Campus Assistant powered by Google Gemini.**\nAsk me about any academic block, classroom, food court, hostel curfew, shopping, or emergency help!",
       poweredBy: 'gemini-3.6-flash',
     },
   ]);
@@ -112,20 +113,26 @@ export const AIChatDrawer: React.FC<AIChatDrawerProps> = ({
     <div className="fixed inset-0 z-50 flex justify-end bg-black/60 backdrop-blur-md animate-in fade-in select-none">
       <div className="w-full max-w-md bg-[#090D16] border-l border-slate-800/80 text-white h-full flex flex-col shadow-2xl">
         {/* Header */}
-        <div className="flex items-center justify-between p-4 border-b border-slate-800 bg-[#0F172A]">
+        <div className="flex items-center justify-between p-4 border-b border-slate-800 bg-[#0c0e14]">
           <div className="flex items-center gap-2.5">
-            <div className="w-9 h-9 rounded-2xl bg-gradient-to-tr from-[#635BFF] via-[#38BDF8] to-pink-500 flex items-center justify-center text-white shadow-lg shadow-[#635BFF]/30">
-              <Sparkles className="w-5 h-5 animate-pulse" />
+            <div className="relative w-9 h-9 rounded-xl overflow-hidden bg-gradient-to-br from-[#1e1f26] to-[#0c0e14] border border-[#ff5e1e]/40 flex items-center justify-center shadow-lg shadow-orange-500/20">
+              <Image
+                src="/navia-monogram.png"
+                alt="NAVIA Monogram"
+                width={36}
+                height={36}
+                className="object-contain p-0.5"
+              />
             </div>
             <div>
-              <h3 className="font-bold text-sm text-white flex items-center gap-1.5">
-                LPU Campus Assistant
-                <span className="flex items-center gap-1 text-[9px] bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-cyan-300 border border-cyan-500/40 font-semibold px-2 py-0.5 rounded-full">
-                  <Cpu className="w-2.5 h-2.5 text-cyan-400" />
-                  Gemini AI
+              <h3 className="font-bold text-sm text-white flex items-center gap-1.5 font-heading">
+                NAVIA AI Assistant
+                <span className="flex items-center gap-1 text-[9px] bg-gradient-to-r from-orange-500/20 to-amber-500/20 text-[#ffb59d] border border-[#ff5e1e]/40 font-semibold px-2 py-0.5 rounded-full">
+                  <Sparkles className="w-2.5 h-2.5 text-[#ff5e1e]" />
+                  Gemini
                 </span>
               </h3>
-              <p className="text-[11px] text-cyan-300 font-medium">All 40+ Blocks, Hostels, Food & Timings</p>
+              <p className="text-[11px] text-slate-400 font-medium">LPU Spatial Campus · 600+ Acres Guide</p>
             </div>
           </div>
           <button

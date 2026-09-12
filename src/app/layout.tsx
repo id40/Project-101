@@ -2,12 +2,12 @@ import type { Metadata, Viewport } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'LPU 3D GIS Digital Campus Navigator | Lovely Professional University',
-  description: 'Real-time 3D GIS campus digital twin with building extrusion, pedestrian & road routing, multi-floor indoor blueprints, distance measurement, and Gemini AI assistant.',
+  title: 'NAVIA · Spatial Campus OS | Lovely Professional University',
+  description: 'Explore · Navigate · Belong — NAVIA real-time 3D GIS campus digital twin with building extrusion, live phone GPS walk mode, indoor maps, and Gemini AI assistant.',
   manifest: '/manifest.json',
   icons: {
-    icon: '/icon.svg',
-    apple: '/icon.svg',
+    icon: '/navia-monogram.png',
+    apple: '/navia-monogram.png',
   },
 };
 

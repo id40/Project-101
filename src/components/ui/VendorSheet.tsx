@@ -10,6 +10,7 @@ interface VendorSheetProps {
   onNavigateToVendor: (ven: Vendor) => void;
   onClose: () => void;
   userPosition: [number, number, number];
+  onOpenBooking?: (shopId?: string) => void;
 }
 
 export const VendorSheet: React.FC<VendorSheetProps> = ({
@@ -17,6 +18,7 @@ export const VendorSheet: React.FC<VendorSheetProps> = ({
   onNavigateToVendor,
   onClose,
   userPosition,
+  onOpenBooking,
 }) => {
   const [filter, setFilter] = useState<string>('all');
 
@@ -113,6 +115,18 @@ export const VendorSheet: React.FC<VendorSheetProps> = ({
                   </span>
 
                   <div className="flex items-center gap-1.5">
+                    {vendor.location_id === 'b-15-unimall' && onOpenBooking && (
+                      <button
+                        onClick={() => {
+                          onOpenBooking();
+                          onClose();
+                        }}
+                        className="px-2 py-1.5 bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold rounded-lg text-xs flex items-center gap-1 transition-colors"
+                      >
+                        <ShoppingBag className="w-3 h-3" />
+                        Book / Order
+                      </button>
+                    )}
                     {vendor.phone && (
                       <a
                         href={`tel:${vendor.phone}`}

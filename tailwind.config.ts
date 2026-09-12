@@ -23,6 +23,17 @@ const config: Config = {
           amber: '#F59E0B',
           red: '#EF4444',
         },
+        stitch: {
+          orange: '#ff5e1e',
+          orangeLight: '#ffb59d',
+          orangeDark: '#561600',
+          cyan: '#7bd0ff',
+          emerald: '#4edea3',
+          surface: '#111319',
+          surfaceCard: '#1e1f26',
+          surfaceHigh: '#282a30',
+          border: '#33343b',
+        },
       },
       fontFamily: {
         heading: ['var(--font-heading)', 'Space Grotesk', 'sans-serif'],

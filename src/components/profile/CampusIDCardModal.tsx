@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { StudentProfile } from '@/types/profile';
 import { X, QrCode, ShieldCheck, Phone, RefreshCw } from 'lucide-react';
 
@@ -48,12 +49,18 @@ export const CampusIDCardModal: React.FC<CampusIDCardModalProps> = ({ profile, o
               <div>
                 <div className="flex items-center justify-between border-b border-white/10 pb-3">
                   <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 rounded-lg bg-[#F59E0B] flex items-center justify-center font-black text-slate-900 text-sm shadow">
-                      LPU
+                    <div className="relative w-8 h-8 rounded-lg overflow-hidden bg-white/10 border border-[#ff5e1e]/40 flex items-center justify-center shadow">
+                      <Image
+                        src="/navia-monogram.png"
+                        alt="NAVIA"
+                        width={32}
+                        height={32}
+                        className="object-contain p-0.5"
+                      />
                     </div>
                     <div>
-                      <h3 className="font-extrabold text-xs tracking-wider uppercase">LOVELY PROFESSIONAL UNIVERSITY</h3>
-                      <p className="text-[9px] text-cyan-300 font-medium">Smart Campus Digital Identity</p>
+                      <h3 className="font-extrabold text-xs tracking-wider uppercase font-heading">NAVIA · LPU IDENTITY</h3>
+                      <p className="text-[9px] text-[#ffb59d] font-medium">Smart Campus Digital ID</p>
                     </div>
                   </div>
                   <ShieldCheck className="w-5 h-5 text-emerald-400" />

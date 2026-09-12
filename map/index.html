@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lovely Professional University (LPU) - 3D Architectural Masterplan & Digital Twin</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Google Fonts for clean architectural typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <!-- Three.js and OrbitControls -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/18.6.4/tween.umd.js"></script>
+</head>
+<body>
+  <!-- 3D Canvas Container -->
+  <div id="canvas-container"></div>
+
+  <!-- Top Navigation / Brand Bar -->
+  <header class="top-nav">
+    <div class="brand-group">
+      <div class="brand-logo">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+        </svg>
+      </div>
+      <div class="brand-text">
+        <h1>LOVELY PROFESSIONAL UNIVERSITY</h1>
+        <span class="sub-badge">3D DIGITAL TWIN &bull; ARCHITECTURAL MASTERPLAN</span>
+      </div>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="search-container">
+      <svg class="search-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+      <input type="text" id="search-input" placeholder="Search blocks, stadium, departments, gates..." autocomplete="off">
+      <div id="search-results" class="search-dropdown hidden"></div>
+    </div>
+
+    <!-- Quick Stats & Time Slider -->
+    <div class="top-controls">
+      <div class="time-slider-wrapper" title="Simulate Daylight & Sun Elevation">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <span id="time-label">14:00</span>
+        <input type="range" id="time-slider" min="6" max="22" step="0.5" value="14">
+      </div>
+      <button id="btn-fullscreen" class="icon-btn" title="Toggle Fullscreen">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Left Quick Navigation & Layer Panel -->
+  <aside class="left-panel">
+    <!-- Camera View Presets -->
+    <div class="panel-section">
+      <div class="section-title">CAMERA MODES</div>
+      <div class="btn-grid">
+        <button class="mode-btn active" data-view="isometric" title="35-45° Architectural Isometric View">
+          <span class="btn-icon">📐</span> Isometric 3D
+        </button>
+        <button class="mode-btn" data-view="topdown" title="Plan / Top-Down Masterplan View">
+          <span class="btn-icon">🗺️</span> Top-Down
+        </button>
+        <button class="mode-btn" data-view="walk" title="First-Person Ground Level Walk">
+          <span class="btn-icon">🚶</span> Walk Mode
+        </button>
+        <button class="mode-btn" data-view="tour" title="Cinematic Orbit Tour">
+          <span class="btn-icon">🎥</span> Auto Tour
+        </button>
+      </div>
+    </div>
+
+    <!-- Key Sector Focus Presets -->
+    <div class="panel-section">
+      <div class="section-title">KEY CAMPUS SECTORS</div>
+      <div class="sector-list">
+        <button class="sector-chip" data-target="maingate">
+          <span class="chip-dot gate"></span> Main Gate & Mittal Park
+        </button>
+        <button class="sector-chip" data-target="block32">
+          <span class="chip-dot admin"></span> Block 32 & Admissions
+        </button>
+        <button class="sector-chip" data-target="amphitheater">
+          <span class="chip-dot plaza"></span> Central Amphitheater
+        </button>
+        <button class="sector-chip" data-target="cricket">
+          <span class="chip-dot sports"></span> Cricket Stadium & Stands
+        </button>
+        <button class="sector-chip" data-target="sportsarena">
+          <span class="chip-dot indoor"></span> Indoor Mega Sports Complex
+        </button>
+        <button class="sector-chip" data-target="engineering">
+          <span class="chip-dot acad"></span> LIT & Engineering Block 55
+        </button>
+        <button class="sector-chip" data-target="hostel">
+          <span class="chip-dot res"></span> Hostel Towers & Dining
+        </button>
+      </div>
+    </div>
+
+    <!-- Map Layers & Visualization Style -->
+    <div class="panel-section">
+      <div class="section-title">MAP LAYERS & STYLES</div>
+      <div class="layer-item">
+        <label class="toggle-switch">
+          <input type="checkbox" id="layer-satellite">
+          <span class="slider"></span>
+        </label>
+        <span class="layer-label">Satellite Imagery Basemap</span>
+      </div>
+      <div class="layer-item">
+        <label class="toggle-switch">
+          <input type="checkbox" id="layer-zoning">
+          <span class="slider"></span>
+        </label>
+        <span class="layer-label">Functional Zoning Heatmap</span>
+      </div>
+      <div class="layer-item">
+        <label class="toggle-switch">
+          <input type="checkbox" id="layer-trees" checked>
+          <span class="slider"></span>
+        </label>
+        <span class="layer-label">Landscaping Trees (2,500+)</span>
+      </div>
+      <div class="layer-item">
+        <label class="toggle-switch">
+          <input type="checkbox" id="layer-solar" checked>
+          <span class="slider"></span>
+        </label>
+        <span class="layer-label">Rooftop Solar Arrays</span>
+      </div>
+      <div class="layer-item">
+        <label class="toggle-switch">
+          <input type="checkbox" id="layer-labels" checked>
+          <span class="slider"></span>
+        </label>
+        <span class="layer-label">3D Landmark Pins</span>
+      </div>
+    </div>
+
+    <!-- Measurement Tools -->
+    <div class="panel-section">
+      <div class="section-title">MEASUREMENT SUITE</div>
+      <div class="measure-bar">
+        <button id="btn-measure-dist" class="tool-btn" title="Measure Point-to-Point Distance">
+          📏 Distance Tool
+        </button>
+        <button id="btn-measure-clear" class="tool-btn secondary hidden">
+          ✕ Clear
+        </button>
+      </div>
+      <div id="measure-result" class="measure-display hidden">
+        Distance: <span id="measure-val">0.0 m</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Right Building Inspector Drawer -->
+  <aside id="inspector-panel" class="inspector-panel hidden">
+    <div class="inspector-header">
+      <div class="tag-row">
+        <span id="insp-category" class="badge">Academic</span>
+        <span id="insp-block" class="badge-sub">Block 32</span>
+      </div>
+      <button id="btn-close-insp" class="close-btn" title="Close Panel">&times;</button>
+    </div>
+    <div class="inspector-body">
+      <h2 id="insp-title">Division of Admissions & Career Services</h2>
+      <p id="insp-desc" class="insp-description">
+        Iconic multi-story administrative hub, admissions division, career center, and grand atrium.
+      </p>
+
+      <!-- Ground-Truth Satellite Photo Reference -->
+      <div id="insp-photo-wrapper" class="insp-photo-wrapper hidden">
+        <div class="insp-photo-container">
+          <img id="insp-photo" src="" alt="Landmark Satellite Reference" class="insp-photo-img" />
+          <span class="photo-caption">🛰️ Survey Ground Truth Reference</span>
+        </div>
+      </div>
+
+      <div class="insp-specs">
+        <div class="spec-card">
+          <span class="spec-label">EST. HEIGHT</span>
+          <span id="insp-height" class="spec-val">38.0 m</span>
+        </div>
+        <div class="spec-card">
+          <span class="spec-label">FLOORS</span>
+          <span id="insp-levels" class="spec-val">10 Levels</span>
+        </div>
+        <div class="spec-card">
+          <span class="spec-label">FOOTPRINT</span>
+          <span id="insp-area" class="spec-val">3,850 m²</span>
+        </div>
+        <div class="spec-card">
+          <span class="spec-label">COORDINATES</span>
+          <span id="insp-coords" class="spec-val">31.2548° N</span>
+        </div>
+      </div>
+
+      <div class="insp-source-card">
+        <div class="source-header">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline>
+          </svg>
+          <span>SATELLITE GROUND TRUTH IDENTIFICATION</span>
+        </div>
+        <p class="source-note">
+          Accurately reconstructed from high-resolution satellite imagery matching actual campus geometry, orientation, and rooftop photovoltaic systems.
+        </p>
+      </div>
+
+      <button id="btn-focus-bldg" class="action-btn">
+        🎯 Focus Camera on Structure
+      </button>
+    </div>
+  </aside>
+
+  <!-- Walk Mode HUD / Controls Helper -->
+  <div id="walk-hud" class="walk-hud hidden">
+    <div class="walk-hud-title">WALK MODE ACTIVE</div>
+    <div class="walk-hud-keys">
+      <span><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> Move</span>
+      <span><kbd>Drag</kbd> Look Around</span>
+      <span><kbd>Shift</kbd> Sprint</span>
+      <span><kbd>ESC</kbd> Exit</span>
+    </div>
+  </div>
+
+  <!-- Hover Tooltip -->
+  <div id="hover-tooltip" class="hover-tooltip hidden">
+    <div id="tooltip-name" class="tooltip-title">Building Name</div>
+    <div id="tooltip-sub" class="tooltip-sub">Category &bull; Height</div>
+  </div>
+
+  <!-- Bottom Compass & Scale Bar -->
+  <footer class="bottom-bar">
+    <div class="compass-widget" id="compass-widget" title="North orientation (Click to reset)">
+      <div class="compass-needle" id="compass-needle"></div>
+      <span class="compass-label">N</span>
+    </div>
+    <div class="scale-bar-wrapper">
+      <div class="scale-line"></div>
+      <div class="scale-text">100 m</div>
+    </div>
+    <div class="legend-bar">
+      <span class="legend-item"><span class="legend-color bldg-acad"></span>Academic</span>
+      <span class="legend-item"><span class="legend-color bldg-res"></span>Hostels</span>
+      <span class="legend-item"><span class="legend-color bldg-sports"></span>Sports</span>
+      <span class="legend-item"><span class="legend-color bldg-plaza"></span>Plaza / Memorial</span>
+      <span class="legend-item"><span class="legend-color bldg-solar"></span>Solar Photovoltaics</span>
+    </div>
+  </footer>
+
+  <!-- Application Logic -->
+  <script src="app.js"></script>
+</body>
+</html>

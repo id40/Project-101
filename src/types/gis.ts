@@ -15,6 +15,8 @@ export interface GISBuildingProperties {
   description?: string;
   facilities?: string[];
   has_indoor_map?: boolean;
+  photo?: string;
+  badge?: string;
 }
 
 export type BuildingCategory = 

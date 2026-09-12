@@ -9,9 +9,10 @@ import { X, Navigation, Layers, ChevronRight, CornerDownRight, ArrowUpRight, Arr
 interface IndoorModalProps {
   buildingId: string;
   onClose: () => void;
+  onOpenBooking?: (shopId?: string) => void;
 }
 
-export const IndoorModal: React.FC<IndoorModalProps> = ({ buildingId, onClose }) => {
+export const IndoorModal: React.FC<IndoorModalProps> = ({ buildingId, onClose, onOpenBooking }) => {
   const plan: BuildingFloorPlan | undefined = INDOOR_FLOOR_PLANS[buildingId];
   const [selectedFloor, setSelectedFloor] = useState<number>(0);
   const [destRoomId, setDestRoomId] = useState<string>('');
@@ -197,6 +198,22 @@ export const IndoorModal: React.FC<IndoorModalProps> = ({ buildingId, onClose })
               ))}
             </select>
           </div>
+
+          {/* UniMall Quick Booking Shortcut */}
+          {buildingId === 'b-15-unimall' && onOpenBooking && (
+            <div className="mb-3 p-2.5 rounded-xl bg-gradient-to-r from-amber-500/20 to-orange-500/15 border border-amber-500/30 flex items-center justify-between">
+              <div>
+                <span className="text-xs font-bold text-amber-300 block">UniMall Express Booking</span>
+                <span className="text-[10px] text-slate-400">Pre-order food, prints & queue tokens</span>
+              </div>
+              <button
+                onClick={() => onOpenBooking(destRoomId || undefined)}
+                className="px-2.5 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-[11px] shadow transition-colors"
+              >
+                {destRoomId ? 'Book Outlet' : 'Open Hub'}
+              </button>
+            </div>
+          )}
 
           {/* Turn-by-Turn Navigation Steps */}
           {activeIndoorRoute ? (

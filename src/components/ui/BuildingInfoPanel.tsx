@@ -12,6 +12,7 @@ interface BuildingInfoPanelProps {
   onNavigateFrom: (id: string, lng: number, lat: number) => void;
   onOpenIndoor?: (id: string) => void;
   hasIndoorMap?: boolean;
+  onOpenBooking?: (shopId?: string) => void;
 }
 
 const CATEGORY_BADGES: Record<string, { label: string; color: string; emoji: string }> = {
@@ -37,6 +38,7 @@ export default function BuildingInfoPanel({
   onNavigateFrom,
   hasIndoorMap,
   onOpenIndoor,
+  onOpenBooking,
 }: BuildingInfoPanelProps) {
   if (!building) return null;
 
@@ -46,7 +48,7 @@ export default function BuildingInfoPanel({
     : building.facilities || [];
 
   return (
-    <div className="absolute bottom-0 left-0 right-0 md:right-auto md:left-4 md:bottom-4 md:w-96 z-40 animate-slide-up">
+    <div className="absolute bottom-0 left-0 right-0 md:left-auto md:right-4 md:top-20 md:bottom-auto md:w-96 z-40 animate-slide-left max-h-[calc(100vh-6.5rem)] overflow-y-auto no-scrollbar pointer-events-auto">
       <div className="bg-slate-900/95 backdrop-blur-xl border border-white/10 rounded-t-3xl md:rounded-2xl shadow-2xl shadow-black/50 overflow-hidden">
         {/* Drag handle (mobile) */}
         <div className="flex justify-center py-2 md:hidden">
@@ -98,6 +100,28 @@ export default function BuildingInfoPanel({
           </div>
         )}
 
+        {/* Ground-Truth Satellite Survey Reference / Campus Landmark Badge */}
+        {building.photo && (
+          <div className="px-5 pb-3">
+            <div className="relative rounded-xl overflow-hidden border border-sky-500/30 bg-gradient-to-br from-slate-900 to-indigo-950 p-4 shadow-lg group">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2.5">
+                  <div className="w-10 h-10 rounded-xl bg-indigo-500/20 border border-indigo-500/40 flex items-center justify-center text-xl">
+                    {badge.emoji}
+                  </div>
+                  <div>
+                    <div className="text-xs font-bold text-white leading-tight">Verified Campus Landmark</div>
+                    <div className="text-[10px] text-sky-300 font-mono mt-0.5">WGS84 High-Confidence Survey</div>
+                  </div>
+                </div>
+                <span className="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                  Active
+                </span>
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* Stats row */}
         <div className="px-5 pb-3 flex items-center gap-4 text-xs text-slate-400">
           {building.height > 0 && (
@@ -136,6 +160,16 @@ export default function BuildingInfoPanel({
 
         {/* Action buttons */}
         <div className="px-5 pb-5 pt-2 flex flex-col gap-2">
+          {building.id === 'b-15-unimall' && onOpenBooking && (
+            <button
+              onClick={() => onOpenBooking()}
+              className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-slate-950 text-xs font-black shadow-lg shadow-amber-500/25 transition-all active:scale-[0.98]"
+            >
+              <span>🛍️</span>
+              Order Food & Book UniMall Services
+            </button>
+          )}
+
           {(hasIndoorMap || building.has_indoor_map) && onOpenIndoor && (
             <button
               onClick={() => onOpenIndoor(building.id)}
@@ -149,7 +183,7 @@ export default function BuildingInfoPanel({
           <div className="flex gap-2">
             <button
               onClick={() => coordinates && onNavigateTo(building.id, coordinates[0], coordinates[1])}
-              className="flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white text-sm font-semibold transition-all shadow-lg shadow-indigo-500/25 active:scale-[0.98]"
+              className="flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-[#ff5e1e] hover:brightness-110 text-white text-sm font-semibold transition-all shadow-lg shadow-orange-500/25 active:scale-[0.98]"
             >
               <Navigation size={16} />
               Navigate Here

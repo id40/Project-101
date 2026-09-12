@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useState, useRef, useEffect, useMemo } from 'react';
-import { Search, X, MapPin, BookOpen, Building2, Utensils, ShoppingBag, Heart, Dumbbell, Car, DoorOpen, TreePine } from 'lucide-react';
+import React, { useState, useRef, useEffect } from 'react';
+import { Search, X, MapPin, BookOpen, Building2, Utensils, ShoppingBag, Heart, Dumbbell, Car, DoorOpen, TreePine, ArrowRight, Sparkles } from 'lucide-react';
 import lpuBuildingsData from '@/data/geojson/lpu_buildings.json';
 import lpuPoisData from '@/data/geojson/lpu_pois.json';
 
@@ -9,6 +9,7 @@ interface CampusSearchProps {
   onSelectLocation: (id: string, name: string, lng: number, lat: number) => void;
   onClose?: () => void;
   className?: string;
+  variant?: 'header' | 'hero';
 }
 
 interface SearchResult {
@@ -125,13 +126,19 @@ function buildStaticLocations(): SearchResult[] {
 
 const STATIC_LOCATIONS = buildStaticLocations();
 
-export default function CampusSearch({ onSelectLocation, onClose, className = '' }: CampusSearchProps) {
+export default function CampusSearch({
+  onSelectLocation,
+  onClose,
+  className = '',
+  variant = 'header',
+}: CampusSearchProps) {
   const [query, setQuery] = useState('');
   const [activeFilter, setActiveFilter] = useState('');
   const [results, setResults] = useState<SearchResult[]>([]);
   const [allLocations] = useState<SearchResult[]>(STATIC_LOCATIONS);
   const [isFocused, setIsFocused] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   // Search logic
   useEffect(() => {
@@ -170,57 +177,100 @@ export default function CampusSearch({ onSelectLocation, onClose, className = ''
     setResults(filtered.slice(0, 20));
   }, [query, activeFilter, allLocations]);
 
-  const showResults = isFocused && (query.length > 0 || activeFilter);
+  const showResults = isFocused && (query.length > 0 || activeFilter !== '');
+
+  const handleChipClick = (value: string) => {
+    const nextFilter = activeFilter === value ? '' : value;
+    setActiveFilter(nextFilter);
+    setIsFocused(true);
+
+    if (nextFilter) {
+      let matched: SearchResult[] = [];
+      if (nextFilter === 'highlight') {
+        matched = allLocations.filter(loc => loc.is_highlight);
+      } else if (nextFilter === 'labs') {
+        matched = allLocations.filter(loc => 
+          loc.name.toLowerCase().includes('lab') || 
+          loc.name.toLowerCase().includes('academy') ||
+          loc.name.toLowerCase().includes('workshop')
+        );
+      } else {
+        matched = allLocations.filter(loc => loc.category === nextFilter);
+      }
+      if (matched.length > 0 && onSelectLocation) {
+        const prime = matched.find(m => m.is_highlight) || matched[0];
+        onSelectLocation(prime.id, prime.name, prime.lng, prime.lat);
+      }
+    }
+  };
 
   return (
-    <div className={`w-full max-w-lg ${className}`}>
-      {/* Search Input */}
-      <div className="relative">
-        <div className="flex items-center bg-slate-900/90 backdrop-blur-xl border border-white/10 rounded-2xl px-4 py-3 shadow-2xl shadow-indigo-500/10 transition-all focus-within:border-indigo-500/50 focus-within:shadow-indigo-500/20">
-          <Search size={18} className="text-slate-400 mr-3 flex-shrink-0" />
+    <div ref={containerRef} className={`relative ${className}`}>
+      {/* Header Search Bar Container */}
+      <div className="flex flex-col gap-1.5">
+        {/* Main Search Input */}
+        <div className="relative flex items-center rounded-xl bg-[#1e1f26]/90 border border-white/15 focus-within:border-[#ff5e1e]/70 focus-within:bg-[#1e1f26] transition-all shadow-inner px-2.5 py-1">
+          <div className="text-slate-400 flex items-center pointer-events-none pr-2">
+            <Search size={14} />
+          </div>
           <input
             ref={inputRef}
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             onFocus={() => setIsFocused(true)}
-            onBlur={() => setTimeout(() => setIsFocused(false), 200)}
-            placeholder="Search LPU campus..."
-            className="bg-transparent text-white placeholder-slate-500 text-sm w-full outline-none font-sans"
+            onBlur={() => setTimeout(() => setIsFocused(false), 250)}
+            placeholder="Search NAVIA campus (e.g. Block 34 CSE, UniMall, GH, Gates)..."
+            className="w-full bg-transparent py-1 text-xs font-medium text-white placeholder:text-slate-500 focus:outline-none focus:ring-0 border-none"
           />
-          {query && (
-            <button onClick={() => { setQuery(''); inputRef.current?.focus(); }} className="p-1 text-slate-400 hover:text-white transition-colors">
-              <X size={16} />
+          {query ? (
+            <button 
+              type="button"
+              onClick={() => { setQuery(''); inputRef.current?.focus(); }} 
+              className="p-1 text-slate-400 hover:text-white transition-colors"
+            >
+              <X size={13} />
+            </button>
+          ) : (
+            <button 
+              type="button"
+              onClick={() => inputRef.current?.focus()}
+              className="p-1 rounded-md bg-[#ff5e1e] text-white hover:brightness-110 active:scale-95 transition-all shadow-sm"
+              title="Search"
+            >
+              <ArrowRight size={12} />
             </button>
           )}
         </div>
+
+        {/* Filter Chips Strip in Header */}
+        <div 
+          className="flex items-center gap-1 overflow-x-auto no-scrollbar py-0.5"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        >
+          {FILTER_CHIPS.map(chip => (
+            <button
+              key={chip.value}
+              type="button"
+              onMouseDown={(e) => e.preventDefault()} // Prevent input blur on click
+              onClick={() => handleChipClick(chip.value)}
+              className={`flex-shrink-0 px-2 py-0.5 rounded-md text-[10px] font-medium whitespace-nowrap transition-all select-none active:scale-95 ${
+                activeFilter === chip.value
+                  ? 'bg-[#ff5e1e] text-white shadow-sm font-semibold'
+                  : 'bg-[#1e1f26]/80 hover:bg-[#282a30] text-slate-300 hover:text-white border border-white/10'
+              }`}
+            >
+              {chip.label}
+            </button>
+          ))}
+        </div>
       </div>
 
-      {/* Filter Chips */}
-      <div className="flex gap-2 mt-2 overflow-x-auto no-scrollbar px-1">
-        {FILTER_CHIPS.map(chip => (
-          <button
-            key={chip.value}
-            onClick={() => {
-              setActiveFilter(activeFilter === chip.value ? '' : chip.value);
-              setIsFocused(true);
-            }}
-            className={`flex-shrink-0 px-3 py-1.5 rounded-full text-xs font-medium transition-all ${
-              activeFilter === chip.value
-                ? 'bg-indigo-500 text-white shadow-lg shadow-indigo-500/30'
-                : 'bg-slate-800/60 text-slate-400 hover:bg-slate-700/60 hover:text-slate-200 border border-white/5'
-            }`}
-          >
-            {chip.label}
-          </button>
-        ))}
-      </div>
-
-      {/* Results Dropdown */}
+      {/* Floating Results Dropdown */}
       {showResults && (
-        <div className="mt-2 bg-slate-900/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl shadow-black/50 max-h-80 overflow-y-auto">
+        <div className="absolute top-full left-0 right-0 mt-2 bg-[#0c0e14] border border-white/20 rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.95)] max-h-80 overflow-y-auto z-50 animate-fade-in divide-y divide-white/5">
           {results.length === 0 ? (
-            <div className="p-4 text-center text-slate-500 text-sm">
+            <div className="p-4 text-center text-slate-500 text-xs">
               No results found for &quot;{query}&quot;
             </div>
           ) : (
@@ -228,33 +278,38 @@ export default function CampusSearch({ onSelectLocation, onClose, className = ''
               {results.map((result) => (
                 <button
                   key={result.id}
+                  type="button"
+                  onMouseDown={(e) => e.preventDefault()}
                   onClick={() => {
                     onSelectLocation(result.id, result.name, result.lng, result.lat);
                     setQuery(result.name);
                     setIsFocused(false);
                   }}
-                  className="w-full flex items-start gap-3 px-3 py-2.5 rounded-xl text-left hover:bg-white/5 transition-colors group"
+                  className="w-full flex items-start gap-2.5 px-2.5 py-2 rounded-lg text-left hover:bg-[#1e1f26] transition-colors group"
                 >
-                  <div className={`mt-0.5 p-1.5 rounded-lg ${CATEGORY_COLORS[result.category] || 'bg-slate-500/20 text-slate-300'}`}>
-                    {CATEGORY_ICONS[result.category] || <MapPin size={14} />}
+                  <div className={`mt-0.5 p-1 rounded-md flex-shrink-0 ${CATEGORY_COLORS[result.category] || 'bg-slate-500/20 text-slate-300'}`}>
+                    {CATEGORY_ICONS[result.category] || <MapPin size={13} />}
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-1.5 flex-wrap">
-                      <span className="text-sm text-white font-medium truncate group-hover:text-indigo-300 transition-colors">
+                      <span className="text-xs text-white font-medium truncate group-hover:text-[#ffb59d] transition-colors">
                         {result.name}
                       </span>
                       {result.badge && (
-                        <span className="text-[10px] text-amber-300 bg-amber-500/10 border border-amber-500/25 px-1.5 py-0.5 rounded font-mono font-medium flex-shrink-0">
+                        <span className="text-[9px] text-amber-300 bg-amber-500/15 border border-amber-500/30 px-1 py-0.2 rounded font-mono flex-shrink-0">
                           {result.badge}
                         </span>
                       )}
                     </div>
-                    <div className="text-xs text-slate-500 mt-0.5 flex items-center gap-2">
-                      {result.block_code && <span className="font-mono">{result.block_code}</span>}
+                    <div className="text-[10px] text-slate-500 mt-0.5 flex items-center gap-2">
+                      {result.block_code && <span className="font-mono text-slate-400">{result.block_code}</span>}
                       <span className="capitalize">{result.category}</span>
+                      {result.description && (
+                        <span className="truncate text-slate-600 hidden sm:inline">· {result.description}</span>
+                      )}
                     </div>
                   </div>
-                  <MapPin size={14} className="text-slate-600 mt-1 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <MapPin size={13} className="text-slate-600 mt-1 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </button>
               ))}
             </div>
