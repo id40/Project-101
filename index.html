@@ -1,29 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Interactive Map</title>
-
-  <!-- Leaflet CSS -->
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-  >
-
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LPU Campus Navigator</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
 </head>
-
 <body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark">LPU</div>
+        <div>
+          <strong>LPU Campus Navigator</strong>
+          <span>Lovely Professional University</span>
+        </div>
+      </div>
 
-  <h1>My Location</h1>
+      <div class="search-wrap">
+        <span>⌕</span>
+        <input id="search" type="text" placeholder="Search buildings, hostels, library, food..." autocomplete="off">
+        <div id="search-results" class="search-results"></div>
+      </div>
 
-  <div id="map"></div>
+      <div class="top-actions">
+        <button id="dark-btn" title="Toggle dark mode">☾</button>
+        <button id="fullscreen-btn" title="Full screen">⛶</button>
+      </div>
+    </header>
 
-  <!-- Leaflet JS -->
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <main class="content">
+      <section class="map-area">
+        <div id="map"></div>
 
-  <script src="script.js"></script>
+        <div class="map-controls">
+          <button id="locate-btn" title="My location">📍</button>
+          <button id="nearby-btn" title="What's near me?">◎</button>
+          <button id="reset-btn" title="Reset map">⌂</button>
+        </div>
+
+        <div class="legend">
+          <button id="legend-toggle">Map legend ▾</button>
+          <div id="legend-content">
+            <div><i class="dot academic"></i> Academic</div>
+            <div><i class="dot hostel"></i> Hostel</div>
+            <div><i class="dot food"></i> Food</div>
+            <div><i class="dot sports"></i> Sports</div>
+            <div><i class="dot service"></i> Services</div>
+          </div>
+        </div>
+      </section>
+
+      <aside id="sidebar" class="sidebar">
+        <div class="empty-state" id="empty-state">
+          <div class="empty-icon">🗺️</div>
+          <h2>Explore LPU</h2>
+          <p>Click a location on the map or search for a place to see its information here.</p>
+          <button class="primary" id="directions-from-here">Start exploring</button>
+        </div>
+
+        <div id="details" class="details hidden">
+          <button class="close" id="close-details">×</button>
+          <div class="category-pill" id="detail-category"></div>
+          <h1 id="detail-name"></h1>
+          <p id="detail-description"></p>
+
+          <div class="info-block">
+            <h3>Facilities</h3>
+            <div id="detail-facilities" class="chips"></div>
+          </div>
+
+          <div class="info-block">
+            <h3>Departments</h3>
+            <div id="detail-departments"></div>
+          </div>
+
+          <div class="info-grid">
+            <div><span>Floors</span><strong id="detail-floors">—</strong></div>
+            <div><span>Hours</span><strong id="detail-hours">—</strong></div>
+          </div>
+
+          <div class="actions">
+            <button class="primary" id="route-btn">🧭 Get directions</button>
+            <button class="secondary" id="favorite-btn">☆ Save</button>
+          </div>
+
+          <div id="floor-section" class="info-block">
+            <h3>Floors</h3>
+            <div id="floor-list" class="floor-list"></div>
+          </div>
+
+          <div id="nearby-section" class="info-block">
+            <h3>Nearby</h3>
+            <div id="nearby-list"></div>
+          </div>
+        </div>
+      </aside>
+    </main>
+  </div>
+
+  <div id="route-modal" class="modal hidden">
+    <div class="modal-card">
+      <button class="close" id="close-route">×</button>
+      <h2>Campus directions</h2>
+      <label>From</label>
+      <select id="from-select"></select>
+      <label>To</label>
+      <select id="to-select"></select>
+      <button class="primary full" id="start-route">Show route</button>
+      <div id="route-summary"></div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="app.js" type="module"></script>
 </body>
 </html>
