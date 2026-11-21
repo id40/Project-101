@@ -1,21 +1,18 @@
-MIT License
+PROPRIETARY AND CONFIDENTIAL LICENSE
 
-Copyright (c) 2026 Jay Vishwakarma
+Copyright (c) 2026 Jay Vishwakarma. All Rights Reserved.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+NOTICE: This software, source code, 3D assets, architecture, algorithms, user interface designs, database schemas, and associated documentation (collectively, the "Software") are the confidential and proprietary trade secrets of Jay Vishwakarma and NAVIA.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+1. OWNERSHIP:
+All title, ownership rights, intellectual property rights, and copyright in and to the Software remain exclusively with Jay Vishwakarma.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+2. RESTRICTIONS:
+Strictly prohibited without prior written authorization from the copyright holder:
+- Copying, cloning, duplicating, modifying, or creating derivative works of this Software.
+- Distributing, publishing, transferring, leasing, selling, licensing, sublicensing, or commercially exploiting any portion of this Software.
+- Decompiling, reverse engineering, disassembling, or attempting to reconstruct source code, 3D assets, or underlying algorithms.
+- Removing or altering any trademark, logo, copyright, or proprietary notices from the Software.
+
+3. NO WARRANTY & LIMITATION OF LIABILITY:
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES, LOSS OF USE, DATA, REVENUE, OR PROFITS) ARISING IN ANY WAY OUT OF THE ACCESS TO, USE OF, OR INABILITY TO USE THIS SOFTWARE.

@@ -2,6 +2,7 @@
   "name": "lpu-3d-campus-navigator",
   "version": "1.0.0",
   "private": true,
+  "license": "UNLICENSED",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
